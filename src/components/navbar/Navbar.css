@@ -1,0 +1,27 @@
+#override .custom-link {
+    color: gray;
+}
+#override .custom-link-active {
+    color: white;
+}
+#override .custom-link:hover {
+    /* background-color: gray; */
+    color: white;
+}
+
+#override .insta {
+    color: rgba(221, 14, 221, 0.834);
+}
+
+#override .twitter {
+    color: rgb(31, 195, 255);
+}
+
+#override .custom-icon:hover {
+    color: white;
+    /* translate: 2; */
+}
+
+#override .custom-nav {
+    min-height: 50px;
+}
