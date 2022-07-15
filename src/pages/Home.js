@@ -5,19 +5,19 @@ import bradFace from "../images/brad-headshot.jpeg"
 
 
 const Home = () => {
-
     
     return (
-        <div>
-            <div class="col-xxl-8 px-4 py-5 text-light" id="home-background">
+        <div className="home-co">
+            <div class="px-4 py-5 text-light" id="home-background">
                 <div class="row flex-lg-row align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
-                        <img src={bradFace} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="300" loading="lazy"/>
+                        <img src={bradFace} class="d-block mx-lg-auto img-fluid" id="brad-headshot" alt="Bootstrap Themes" width="400" height="300" loading="lazy"/>
                         
                     </div>
                     <div class="col-lg-6">
-                        <h1 class="display-5 fw-bold lh-1 mb-3">Bradley Dosch</h1>
-                        <p class="lead">Liscensed Realtor</p>
+                        <h1 class="display-5 fw-bold lh-1 mb-3 home-title">Brad Dosch</h1>
+                        <h4 class="lead home-title">House Hacking Real Estate Agent</h4>
+                        <h6 class="lead home-title">House Hack Seattle | Compass </h6>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         </div>
                     </div>
@@ -33,8 +33,8 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="icon-link">
-                            Call to action
+                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            Learn More  
                             </a>
                         </div>
                     </div>
@@ -46,8 +46,8 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="icon-link">
-                            Call to action
+                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            Learn More  
                             </a>
                         </div>
                     </div>
@@ -59,8 +59,8 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="icon-link">
-                            Call to action
+                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            Learn More  
                             </a>
                         </div>
                     </div>
