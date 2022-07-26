@@ -7,7 +7,7 @@ import bradFace from "../images/brad-headshot.jpeg"
 const Home = () => {
     
     return (
-        <div className="home-co">
+        <div className="home-co" style={{backgroundColor: "lightgray"}}>
             <div class="px-4 py-5 text-light" id="home-background">
                 <div class="row flex-lg-row align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
@@ -65,6 +65,16 @@ const Home = () => {
                         </div>
                     </div>
                     
+                </div>
+            </div>
+            <div className="bg-white">
+                <div className="w-100 shadow-sm">
+                    <div className="card-title">
+                        <h2><FontAwesomeIcon icon={faSign}/> Service #1</h2>
+                    </div>
+                    <div className="card-body">
+
+                    </div>
                 </div>
             </div>
         </div>
