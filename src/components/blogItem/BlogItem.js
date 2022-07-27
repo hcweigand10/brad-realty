@@ -8,8 +8,8 @@ const BlogItem = ({title, subtitle, link, body}) => {
     })
 
     return (
-        <div className='container mt-4'>
-            <div className='header text-center justify-content-center text-center col-md-7 col-lg-8 col-xl-6'>
+        <div className='container mt-4 justify-content-center'>
+            <div className='text-center col-md-8 col-lg-6 col-xl-5 mx-auto'>
                 <img href="https://www.compass.com/ucfe-assets/mc-assets/2/email/Compass_Logo-Animated.gif" alt=""/>
                 <h1>{title}</h1>
                 <p>{subtitle}</p>
@@ -19,7 +19,7 @@ const BlogItem = ({title, subtitle, link, body}) => {
                     null
                 )}
             </div>
-            <hr/>
+            <hr className='w-50 mx-auto mt-4'/>
             <div className='body'>
                 {paragraphs}
             </div>
