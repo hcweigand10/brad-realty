@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Testimonials = () => {
+const Tools = () => {
 
     return (
         <div className='container'>
-             <h3>Testimonials</h3>
+             <h3>Tools</h3>
         </div>
     )
 }
 
-export default Testimonials
+export default Tools

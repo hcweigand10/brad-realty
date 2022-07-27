@@ -64,7 +64,7 @@ const Footer = () => {
                 {/* <hr class="w-100 clearfix d-md-none" /> */}
 
                 {/* <!-- Grid column --> */}
-                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mb-2">
+                <div class="mx-auto mb-2">
                     <h4 class="text-uppercase text-center mb-2 font-weight-bold">
                     Contact
                     </h4>
