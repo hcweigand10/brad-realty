@@ -9,7 +9,7 @@ const BlogItem = ({title, subtitle, link, body}) => {
 
     return (
         <div className='container mt-4'>
-            <div className='header text-center justify-content-center col-md-7 col-lg-8 col-xl-6'>
+            <div className='header text-center justify-content-center text-center col-md-7 col-lg-8 col-xl-6'>
                 <img href="https://www.compass.com/ucfe-assets/mc-assets/2/email/Compass_Logo-Animated.gif" alt=""/>
                 <h1>{title}</h1>
                 <p>{subtitle}</p>

@@ -9,7 +9,7 @@ const Paragraph = ({para, index}) => {
 
     return (
         <div className='my-5'>
-            <h1 className='text-center mb-4'>{title}</h1>
+            <h1 className='text-center mb-4' style={{fontWeight: "bold"}}>{title}</h1>
             {imgSrc ? (
                 <div className='align-items-center'>
                     {odd ? (
