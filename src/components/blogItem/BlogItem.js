@@ -1,9 +1,9 @@
 import React from 'react'
 import Paragraph from './Paragraph'
 
-const BlogItem = ({title, subtitle, link, body}) => {
+const BlogItem = ({blog}) => {
 
-    const paragraphs = body.map((para, index) => {
+    const paragraphs = blog.body.map((para, index) => {
         return <Paragraph para={para} index={index}/>
     })
 
@@ -11,10 +11,10 @@ const BlogItem = ({title, subtitle, link, body}) => {
         <div className='container mt-4 justify-content-center'>
             <div className='text-center col-md-8 col-lg-6 col-xl-5 mx-auto'>
                 <img href="https://www.compass.com/ucfe-assets/mc-assets/2/email/Compass_Logo-Animated.gif" alt=""/>
-                <h1>{title}</h1>
-                <p>{subtitle}</p>
-                {link ? (
-                    <a className='btn btn-dark' href={link.href}>{link.text}</a>
+                <h1>{blog.title}</h1>
+                <p>{blog.subtitle}</p>
+                {blog.link ? (
+                    <a className='btn btn-dark' href={blog.link.href}>{blog.link.text}</a>
                 ) : (
                     null
                 )}

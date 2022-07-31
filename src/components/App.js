@@ -6,7 +6,7 @@ import Home from "../pages/Home"
 import Contact from "../pages/Contact"
 import Blog from "../pages/Blog"
 import Tools from "../pages/Tools"
-import Testimonials from "../pages/Blog"
+import Testimonials from "../pages/Testimonials"
 import Admin from "../pages/Admin"
     
 
