@@ -5,7 +5,7 @@ import { Link  } from 'react-router-dom';
 
 const Navbar = () => {
   
-  const [activePage, setActivePage] = useState(window.location.pathname)
+  const [activePage, setActivePage] = useState((window.location.pathname.split("/")[1]))
   const [collapse, setCollapse] = useState(false)
 
   const handlePageChange = (page) => {
@@ -42,19 +42,19 @@ const Navbar = () => {
           {/* <!-- Left links --> */}
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link className={(activePage==="/home") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/" onClick={() => handlePageChange("/home")}>Home</Link>
+              <Link className={(activePage==="home") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/" onClick={() => handlePageChange("/home")}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className={(activePage==="/blog") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/blog" onClick={() => handlePageChange("/blog")}>Blog</Link>
+              <Link className={(activePage==="blog") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/blog" onClick={() => handlePageChange("/blog")}>Blog</Link>
             </li>
             <li className="nav-item">
-              <Link className={(activePage==="/tools") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/tools" onClick={() => handlePageChange("/tools")}>Tools</Link>
+              <Link className={(activePage==="tools") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/tools" onClick={() => handlePageChange("/tools")}>Tools</Link>
             </li>
             <li className="nav-item">
-              <Link className={(activePage==="/testimonials") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/testimonials" onClick={() => handlePageChange("/testimonials")}>Testimonials</Link>
+              <Link className={(activePage==="testimonials") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/testimonials" onClick={() => handlePageChange("/testimonials")}>Testimonials</Link>
             </li>
             <li className="nav-item">
-              <Link className={(activePage==="/contact") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/contact" onClick={() => handlePageChange("/contact")}>Contact</Link>
+              <Link className={(activePage==="contact") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/contact" onClick={() => handlePageChange("/contact")}>Contact</Link>
             </li>
           </ul>
           {/* <!-- Left links --> */}

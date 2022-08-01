@@ -34,18 +34,25 @@ const Blog = () => {
 
     const featureBlog = <BlogItem blog={sampleBlog}/>
     const featurePreview = <BlogPreview feature={true} blog={sampleBlog}/>
+    const preview1 = <BlogPreview feature={false} blog={sampleBlog}/>
+    const preview2 = <BlogPreview feature={false} blog={sampleBlog}/>
+    const preview3 = <BlogPreview feature={false} blog={sampleBlog}/>
+    const preview4 = <BlogPreview feature={false} blog={sampleBlog}/>
 
     return (
         <div className="container mt-5">
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-3">
                     Welcome to the blog!
                 </div>
-                <div className="col-md-8 row">
-                    <div className="col-12 feature">
-                        {featurePreview}
-                    </div>
-                    
+                <div className="col-md-9 row">
+                    <h3>Featured</h3>
+                    {featurePreview}
+                    <h3>More Posts</h3>
+                    {preview1}
+                    {preview2}
+                    {preview3}
+                    {preview4}
                 </div>
             </div>
         </div>
