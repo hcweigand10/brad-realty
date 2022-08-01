@@ -11,7 +11,7 @@ const BlogPreview = ({feature, blog}) => {
                         <img src={blog.thumbnail} alt="blog thumbnail" style={{maxWidth: "100%"}}/>
                     </div>
                     <div className='col-8 p-3'>
-                        <h6 className='text-muted'>{blog.date}</h6>
+                    <h6 className='text-muted'>{blog.date}</h6>
                         <h3>{blog.title}</h3>
                         <p>{blog.subtitle}</p>
                         <div className='row'>
@@ -27,10 +27,16 @@ const BlogPreview = ({feature, blog}) => {
                 </div>
             ) : (
                 <div>
-                    
+                    <img src={blog.thumbnail} alt="blog thumbnail" style={{maxWidth: "100%"}}/>
+                    <h6 className='text-muted'>{blog.date}</h6>
+                        <h3>{blog.title}</h3>
+                        <p>{blog.subtitle}</p>
+                        <div className='row d-flex'>
+                            <img src={bradPic} alt="brad pic" style={{width: "50px", borderRadius: "50%"}}/>
+                            <p className='' style={{maxWidth: "300px"}}>Brad Doosch</p>
+                        </div>
                 </div>
             )}
-             <h3>title</h3>
         </div>
     )
 }
