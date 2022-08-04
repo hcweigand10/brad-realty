@@ -83,3 +83,9 @@ code {
   min-height: 50px;
 }
 
+/* Blog page */
+
+#override .blog-card:hover {
+  box-shadow: 0px 0px 5px darkgray;
+}
+

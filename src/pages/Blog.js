@@ -32,7 +32,6 @@ const Blog = () => {
         ]
     }
 
-    const featureBlog = <BlogItem blog={sampleBlog}/>
     const featurePreview = <BlogPreview feature={true} blog={sampleBlog}/>
     const preview1 = <BlogPreview feature={false} blog={sampleBlog}/>
     const preview2 = <BlogPreview feature={false} blog={sampleBlog}/>

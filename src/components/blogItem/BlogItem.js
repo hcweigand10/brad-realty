@@ -1,10 +1,26 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+// import { useSearchParams } from "react-router-dom"
+
 import Paragraph from './Paragraph'
+import api from "../../utils/api"
 
-const BlogItem = ({blog}) => {
+const BlogItem = () => {
+    const [blog, setBlog] = useState(null)
+    
+    useEffect(() => {
+        const blog_id = window.location.pathname.split("/")[2].split("%")[0]
+        console.log(blog_id)
+        fetchBlog(blog_id)
+    }, [])
+    
 
-    const paragraphs = blog.body.map((para, index) => {
-        return <Paragraph para={para} index={index}/>
+    const fetchBlog = async (blog_id) => {
+        const blogRaw = api.getSingleBlog(blog_id)
+        setBlog(blogRaw)
+    }
+
+    const paragraphs = blog.paragraphs.map((para, index) => {
+        return <Paragraph para={para} index={index} key={index}/>
     })
 
     return (

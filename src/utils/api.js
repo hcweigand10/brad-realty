@@ -21,6 +21,10 @@ const api = {
         const blogs = await fetch(`${baseUrl}/api/blogs`)
         return blogs.json()
     },
+    getSingleBlog: async (id) => {
+        const blog = await fetch(`${baseUrl}/api/blogs/${id}`)
+        return blog.json()
+    },
     addBlog: async (blogObj) => {
         const res = await fetch(`${baseUrl}/api/blogs`, {
             method: "POST",

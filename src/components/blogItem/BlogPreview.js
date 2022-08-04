@@ -1,19 +1,18 @@
 import React from 'react'
-import bradPic from "../../images/brad-headshot.jpeg"
 
 const BlogPreview = ({feature, blog}) => {
 
     return (
-        <a className={feature ? "col-12 my-3 blog-card" : "col-4 my-3 blog-card"} style={{fontDecoration: "none"}} href={`/blog/s4}`}>
+        <a className={feature ? "col-12 my-3" : "col-4 my-3"} style={{textDecoration: "none"}} href={`/blog/44}`}>
             {feature ? (
-                <div className='card'>
+                <div className='card blog-card'>
                     <div className='row'>
                         <div className='col-6'>
                             <img src={blog.thumbnail} alt="blog thumbnail" style={{maxWidth: "100%"}}/>
                         </div>
                         <div className='col-6 p-2 my-auto'>
                         <h5 className='text-muted'>{blog.date}</h5>
-                            <h2 style={{fontWeight: "bold"}}>{blog.title}</h2>
+                            <h2 style={{fontWeight: "bold", color: "black"}}>{blog.title}</h2>
                             <p style={{lineHeight: "110%", color: "gray"}}>{blog.subtitle}</p>
                             {/* <div className='row'>
                                 <img src={bradPic} alt="brad pic" style={{width: "60px", borderRadius: "50%"}}/>
@@ -23,11 +22,11 @@ const BlogPreview = ({feature, blog}) => {
                     </div>
                 </div>
             ) : (
-                <div className='card'>
+                <div className='card blog-card'>
                     <img src={blog.thumbnail} alt="blog thumbnail" style={{maxWidth: "100%"}}/>
                     <div className='p-3'>
                         <h6 className='text-muted'>{blog.date}</h6>
-                        <h4 style={{fontWeight: "bold"}}>{blog.title}</h4>
+                        <h4 style={{fontWeight: "bold", color: "black"}}>{blog.title}</h4>
                         <p style={{lineHeight: "110%", color: "gray"}}>{blog.subtitle}</p>
                     </div>
                         {/* <div className='row d-flex'>

@@ -1,32 +1,28 @@
 import React from 'react'
 
 const Paragraph = ({para, index}) => {
-
-    const imgSrc = para.imgSrc
-    const text = para.text
-    const title = para.title
     const odd = (index%2===0)
 
     return (
         <div className='my-5'>
-            <h1 className='text-center mb-4' style={{fontWeight: "bold"}}>{title}</h1>
-            {imgSrc ? (
+            <h1 className='text-center mb-4' style={{fontWeight: "bold"}}>{para.paragraph_title}</h1>
+            {para.image_url ? (
                 <div className='align-items-center'>
                     {odd ? (
                         <div className='row justify-content-center'>
-                            <img className='col-4' src={imgSrc} alt="paragraph pic"/>
-                            <p className='col-6'>{text}</p>
+                            <img className='col-4' src={para.image_url} alt="paragraph pic"/>
+                            <p className='col-6'>{para.content}</p>
                         </div>
                     ):(
                         <div className='row justify-content-center'>
-                            <p className='col-6'>{text}</p>
-                            <img className='col-4' src={imgSrc} alt="paragraph pic"/>
+                            <p className='col-6'>{para.content}</p>
+                            <img className='col-4' src={para.image_url} alt="paragraph pic"/>
                         </div>
                     )}
                 </div>
             ):(
                 <div className=''>
-                    <p className='col-10 mx-auto'>{text}</p>
+                    <p className='col-10 mx-auto'>{para.content}</p>
                 </div>
             )}
         </div>
