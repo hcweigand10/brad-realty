@@ -1,5 +1,4 @@
 import React from "react"
-import BlogItem from "../components/blogItem/BlogItem"
 import BlogPreview from "../components/blogItem/BlogPreview"
 
 const Blog = () => {
