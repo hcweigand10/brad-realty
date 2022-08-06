@@ -35,6 +35,36 @@ const api = {
         })
         return res.json()
     },
+    deleteBlog: async (blogId) => {
+        const res = await fetch(`${baseUrl}/api/blogs/${blogId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return res.json()
+    },
+    setFeatureBlog: async (newBlogId) => {
+        const res1 = await fetch(`${baseUrl}/api/blogs/featured`, {
+            method: "PUT",
+            body: JSON.stringify({
+                isFeatured: false
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const res2 = await fetch(`${baseUrl}/api/blogs/${newBlogId}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                isFeatured: true
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return (res1.json())
+    }
 }
 
 export default api

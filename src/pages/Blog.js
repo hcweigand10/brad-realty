@@ -24,6 +24,7 @@ const Blog = () => {
     setIsLoading(true);
     let mounted = true;
     getBlogs().then((data) => {
+      console.log(data)
       if (mounted) {
         renderBlogs(data);
       }
