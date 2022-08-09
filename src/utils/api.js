@@ -1,6 +1,6 @@
-// const baseUrl = "http://localhost:3001"
+const baseUrl = "http://localhost:3001"
 
-const baseUrl = "https://brad-dosch-backend.herokuapp.com"
+// const baseUrl = "https://brad-dosch-backend.herokuapp.com"
 
 const api = {
     getTestimonials: async () => {
@@ -44,17 +44,8 @@ const api = {
         })
         return res.json()
     },
-    setFeatureBlog: async (newBlogId) => {
-        const res1 = await fetch(`${baseUrl}/api/blogs/featured`, {
-            method: "PUT",
-            body: JSON.stringify({
-                isFeatured: false
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        const res2 = await fetch(`${baseUrl}/api/blogs/${newBlogId}`, {
+    addFeatureBlog: async (blogId) => {
+        const res = await fetch(`${baseUrl}/api/blogs/${blogId}`, {
             method: "PUT",
             body: JSON.stringify({
                 isFeatured: true
@@ -63,8 +54,53 @@ const api = {
                 "Content-Type": "application/json"
             }
         })
-        return (res1.json())
-    }
+        return res.json()
+    },
+    removeFeatureBlog: async (blogId) => {
+        const res = await fetch(`${baseUrl}/api/blogs/${blogId}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                isFeatured: false
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return res.json()
+    },
+    addParagraph: async (paragraphObj) => {
+        const res = await fetch(`${baseUrl}/api/paragraphs`, {
+            method: "POST",
+            body: JSON.stringify(paragraphObj),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return res.json()
+    },
+    login: async (email, password) => {
+        const res = await fetch(`${baseUrl}/api/users/login`, {
+            method: "POST",
+            body: JSON.stringify({
+                email,
+                password
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return res.json()
+    },
+    getTokenData: (token) => {
+        return fetch(`${baseUrl}/api/users/gettokendata`, {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${token}`
+          }
+        })
+          .then(res => res.json())
+      },
+
 }
 
 export default api

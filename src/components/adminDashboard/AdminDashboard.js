@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import api from "../../utils/api";
 import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 import BlogRow from "./BlogRow";
+import NewBlog from "./NewBlog";
 import "./adminDashboard.css";
+import moment from "moment"
 
 const AdminDashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,22 +22,60 @@ const AdminDashboard = () => {
       setIsLoading(false);
     });
     return () => (mounted = false);
-  }, []);
+  }, [featuredId]);
 
   const getBlogs = async () => {
     const blogsData = await api.getBlogs();
+    if (!featuredId) {
+      blogsData.forEach(element => {
+        if (element.isFeatured) {
+          setFeaturedId(element.id)
+        }
+      });
+    }
     return blogsData;
   };
 
   const renderBlogs = (blogsData) => {
-    console.log(blogsData);
     setBlogs(blogsData);
   };
 
+  const deleteBlog = async (blogId) => {
+    if (window.confirm(`Are you sure you want to delete the blog with id: ${blogId}`)) {
+      const res = await api.deleteBlog(blogId)
+      window.location.reload()
+    }
+  }
+
+  const setFeatureBlog = async (newBlogId) => {
+    setIsLoading(true)
+    if (featuredId) {
+      console.log("remove feature")
+      const res1 = await api.removeFeatureBlog(featuredId)
+      console.log(res1)
+    }
+    console.log("add feature: ", newBlogId)
+    const res2 = await api.addFeatureBlog(newBlogId)
+    console.log(res2)
+    setFeaturedId(newBlogId)
+  }
+
+  const postNewBlog = async (blogObj, paragraphs) => {
+    const newBlog = await api.addBlog(blogObj)
+    paragraphs.forEach((paragraphObj) => {
+      paragraphObj.blogId = newBlog.id
+      console.log(paragraphObj)
+    })
+    // add paragraphs
+    console.log(newBlog)
+  }
+
 
   const blogCards = blogs.map((blog) => {
-    return <BlogRow blog={blog} featuredId={featuredId} />;
+    return <BlogRow blog={blog} deleteBlog={deleteBlog} setFeatureBlog={setFeatureBlog} key={blog.id}/>;
   });
+
+
 
   return (
     <div className="" id="admin-dashboard">
@@ -66,7 +106,11 @@ const AdminDashboard = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <div>{viewAll ? <div className="row mx-0">{blogCards}</div> : <div></div>}</div>
+        <div>{viewAll ? <div className="row mx-0">{blogCards}</div> : 
+          <div>
+            <NewBlog postNewBlog={postNewBlog}/>
+          </div>}
+        </div>
       )}
     </div>
   );

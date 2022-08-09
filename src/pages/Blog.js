@@ -39,14 +39,13 @@ const Blog = () => {
   };
 
   const renderBlogs = (blogs) => {
-    const feature = blogs.shift();
-    setFeatureBlog(feature);
-    setBlogs(blogs);
+    setBlogs(blogs.filter(blog => !blog.isFeatured));
+    setFeatureBlog(blogs.filter(blog => blog.isFeatured));
   };
 
-  const featurePreview = <BlogPreview feature={true} blog={featureBlog} />;
+
   const previews = blogs.map((blog) => (
-    <BlogPreview feature={false} blog={blog} />
+    <BlogPreview blog={blog} />
   ));
 
   return (
@@ -61,7 +60,7 @@ const Blog = () => {
           ) : (
             <div className="row">
               <h3>Featured</h3>
-              {featurePreview}
+              <BlogPreview blog={featureBlog} />
               <h3>More Posts</h3>
               {previews}
             </div>

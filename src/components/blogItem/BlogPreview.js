@@ -1,10 +1,10 @@
 import React from 'react'
 
-const BlogPreview = ({feature, blog}) => {
+const BlogPreview = ({ blog }) => {
 
     return (
-        <a className={feature ? "col-12 my-3" : "col-md-4 my-3"} style={{textDecoration: "none"}} href={`/blog/44}`}>
-            {feature ? (
+        <a className={blog.isFeatured ? "col-12 my-3" : "col-md-4 my-3"} style={{textDecoration: "none"}} href={`/blog/44}`}>
+            {blog.isFeatured ? (
                 <div className='card blog-card'>
                     <div className='row'>
                         <div className='col-6'>

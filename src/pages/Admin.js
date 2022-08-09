@@ -1,33 +1,26 @@
 import React, {useState} from "react";
 import {Col, Form } from "react-bootstrap";
 import AdminDashboard from "../components/adminDashboard/AdminDashboard";
+import api from "../utils/api";
 
-const Admin = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  const handleAdminSubmit = (e) => {
-    e.preventDefault()
-    const passphraseInput = document.getElementById("admin-phrase-input").value
-    if (passphraseInput === process.env.REACT_APP_ADMIN) {
-      setIsAdmin(true)
-    } else {
-      alert("Invalid credentials, please try agin")
-    }
-  }
+const Admin = ({loginInfo, handleInputChange, logMeIn, loggedIn}) => {
   
-  console.log(process.env.REACT_APP_ADMIN)
 
   return (
     <div className="container">
       <h2>Welcome Back, Brad</h2>
-      {isAdmin ? (
+      {loggedIn ? (
         <AdminDashboard />
       ) : (
         <div>
-          <Form onSubmit={handleAdminSubmit}>
+          <Form onSubmit={logMeIn}>
               <Form.Group as={Col} controlId="formGrid">
-                <Form.Label>Enter you admin phrase here:</Form.Label>
-                <Form.Control type="text" id="admin-phrase-input"/>
+                <Form.Label>Email:</Form.Label>
+                <Form.Control type="text" controlid="admin-email-input" value={loginInfo.email} onChange={handleInputChange} name="email"/>
+              </Form.Group>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control type="password" controlid="admin-password-input" value={loginInfo.password} onChange={handleInputChange} name="password"/>
               </Form.Group>
             <button className="btn btn-primary" type="submit">
               Submit

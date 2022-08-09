@@ -1,19 +1,7 @@
 import React, {useState} from 'react'
 import api from '../../utils/api';
 
-const BlogRow = ({ blog, featuredId }) => {
-
-    const deleteBlog = async (blogId) => {
-      if (window.confirm(`Are you sure you want to delete the blog with id: ${blogId}`)) {
-        const res = await api.deleteBlog(blogId)
-        alert(res)
-      }
-    }
-  
-    const setFeatureBlog = async (newBlogId) => {
-      const res = await api.setFeatureBlog(newBlogId)
-      alert(res)
-    }
+const BlogRow = ({ blog, deleteBlog, setFeatureBlog }) => {
   
     return (
       <div
@@ -38,7 +26,7 @@ const BlogRow = ({ blog, featuredId }) => {
             <p className="my-1">ID: {blog.id}</p>
           </div>
           <div className="justify-content-end">
-            {blog.isFeatured ? <button className="btn btn-secondary text-muted me-2">Featured</button> : <button className="btn btn-primary me-2" onClick={() => setFeatureBlog(blog.id)}>Feature</button>}
+            {blog.isFeatured ? <button className="btn btn-light text-muted me-2">Featured</button> : <button className="btn btn-primary me-2" onClick={() => setFeatureBlog(blog.id)}>Feature</button>}
             <button className="btn btn-danger" onClick={() => deleteBlog(blog.id)}>Delete</button>
           </div>
         </div>

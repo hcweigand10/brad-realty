@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Routes, Route} from "react-router-dom"
 import Navbar from "./navbar/Navbar.js"
 import Footer from "./footer/Footer.js"
@@ -9,6 +9,7 @@ import Tools from "../pages/Tools"
 import Testimonials from "../pages/Testimonials"
 import Admin from "../pages/Admin"
 import BlogItem from "./blogItem/BlogItem.js";
+import api from "../utils/api.js";
     
 
 
@@ -40,6 +41,67 @@ const App = () => {
             },
         ]
     }
+
+    const [loginInfo, setLoginInfo] = useState({
+        email:"",
+        password:""
+    })
+    const [token, setToken] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          api.getTokenData(token)
+          .then(data => {
+              if (data.err) {
+                console.log(data.err)
+                localStorage.removeItem("token")
+              } else {
+                setToken(token);
+                setLoggedIn(true)
+            }
+        })
+        .catch(err => {
+            console.log("bad token")
+            console.log(err);
+        });
+    }
+}, );
+
+const logMeIn = async (e) => {
+    console.log("LOGGING IN!", loginInfo)
+    e.preventDefault()
+    try {
+        const data = await api.login(loginInfo.email, loginInfo.password)
+        console.log(data)
+        if (data.token) {
+            setLoggedIn(true)
+            setToken(data.token);
+            localStorage.setItem("token", data.token);
+            window.location.replace("/")
+          } else {
+            alert("Invalid Login Credentials")
+            setLoginInfo({
+              username: "",
+              password: ""
+            })
+          }
+    
+        } catch (err) {
+          console.log(err);
+        };
+      };
+
+      const handleInputChange = (e) => {
+        setLoginInfo({
+            ...loginInfo,
+            [e.target.name]:e.target.value
+          })
+          console.log(loginInfo)
+      }
+
+
     return (
         <>
         <Navbar/>
@@ -50,7 +112,7 @@ const App = () => {
             <Route path="/tools" element={<Tools/>}/>
             <Route path="/testimonials" element={<Testimonials/>}/>
             <Route path="/contact" element={<Contact/>}/>            
-            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/admin" element={<Admin loginInfo={loginInfo} handleInputChange={handleInputChange} logMeIn={logMeIn} loggedIn={loggedIn}/>}/>
         </Routes>
         <Footer/>  
         </>
