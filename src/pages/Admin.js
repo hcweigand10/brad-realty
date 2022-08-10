@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import {Col, Form } from "react-bootstrap";
 import AdminDashboard from "../components/adminDashboard/AdminDashboard";
-import api from "../utils/api";
 
 const Admin = ({loginInfo, handleInputChange, logMeIn, loggedIn}) => {
   

@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import api from '../../utils/api';
+import React from 'react'
 
 const BlogRow = ({ blog, deleteBlog, setFeatureBlog }) => {
   
