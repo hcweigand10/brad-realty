@@ -3,17 +3,20 @@ import React from 'react'
 const BlogPreview = ({ blog }) => {
 
     return (
-        <a className={blog.isFeatured ? "col-12 my-3" : "col-md-4 my-3"} style={{textDecoration: "none"}} href={`/blog/44}`}>
+        <a className={blog.isFeatured ? "col-12 my-3" : "col-md-4 my-3"} style={{textDecoration: "none"}} href={`/blog/${blog.id}}`}>
             {blog.isFeatured ? (
                 <div className='card blog-card'>
                     <div className='row'>
-                        <div className='col-6'>
+                        <div className='col-md-6'>
                             <img src={blog.thumbnail} alt="blog thumbnail" style={{maxWidth: "100%"}}/>
                         </div>
-                        <div className='col-6 p-2 my-auto'>
-                        <h5 className='text-muted'>{blog.date}</h5>
-                            <h2 style={{fontWeight: "bold", color: "black"}}>{blog.title}</h2>
-                            <p style={{lineHeight: "110%", color: "gray"}}>{blog.subtitle}</p>
+                        <div className='col-md-6 my-auto'>
+                            <div className='p-3'>
+                                <h5 className='text-muted'>{blog.date}</h5>
+                                <h2 style={{fontWeight: "bold", color: "black"}}>{blog.title}</h2>
+                                <p style={{lineHeight: "110%", color: "gray"}}>{blog.subtitle}</p>
+
+                            </div>
                         </div>
                     </div>
                 </div>

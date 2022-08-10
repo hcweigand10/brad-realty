@@ -19,6 +19,20 @@ const Testimonials = () => {
     setTestimonials(testimonialsRaw);
     setIsLoading(false);
   };
+
+  const postNewTestimonial = async (e) => {
+    e.preventDefault()
+    const testimonialObj = {
+      name: document.getElementById("testimonial-name").value,
+      email: document.getElementById("testimonial-email").value,
+      city: document.getElementById("testimonial-city").value,
+      state: document.getElementById("testimonial-state").value,
+      review: document.getElementById("testimonial-review").value,
+    }
+    await api.addTestimonial(testimonialObj)
+    window.location.reload()
+  }
+
   const testimonialItems = testimonials.map((testimonial) => {
     return (
       <Carousel.Item className="justify-content-center" key={testimonial.id}>
@@ -41,27 +55,28 @@ const Testimonials = () => {
 
       <div className="mt-5">
         <h3 className="">Worked with Brad lately? Tell us how it went!</h3>
-        <Form>
+        <Form onSubmit={postNewTestimonial}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Ash Ketchum" />
+              <Form.Control id="testimonial-name" type="text" placeholder="Ash Ketchum" />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email <span className="text-muted" style={{fontStyle: "italic"}}>(We won't send you anything)</span></Form.Label>
               <Form.Control
+                id="testimonial-email"
                 type="email"
                 placeholder="ash.ketchum@pokemon.com"
               />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>City</Form.Label>
-              <Form.Control type="text" placeholder="Elwynn Forrest" />
+              <Form.Control id="testimonial-city" type="text" placeholder="Elwynn Forrest" />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>State</Form.Label>
-              <Form.Select defaultValue="Choose...">
+              <Form.Select id="testimonial-state" defaultValue="Choose...">
                 <option>Choose...</option>
                 <option>AL</option>
                 <option>AK</option>
@@ -119,7 +134,7 @@ const Testimonials = () => {
 
           <Form.Group className="mb-3" controlId="formGridText">
             <Form.Label>Your Review</Form.Label>
-            <Form.Control as="textarea" rows={4} placeholder="'Holy smokes this guy is good...'"/>
+            <Form.Control id="testimonial-review" as="textarea" rows={4} placeholder="'Holy smokes this guy is good...'"/>
           </Form.Group>
           <button className="btn btn-primary" type="submit">
         Submit

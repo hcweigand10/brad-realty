@@ -5,7 +5,7 @@ const Paragraph = ({para, index}) => {
 
     return (
         <div className='my-5'>
-            <h1 className='text-center mb-4' style={{fontWeight: "bold"}}>{para.paragraph_title}</h1>
+            <h2 className='text-center mb-4' style={{fontWeight: "bold"}}>{para.paragraph_title}</h2>
             {para.image_url ? (
                 <div className='align-items-center'>
                     {odd ? (

@@ -5,26 +5,13 @@ import api from "../utils/api";
 
 const Blog = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [featureBlog, setFeatureBlog] = useState({
-    id: 1,
-    title: "Why househacking",
-    subtitle: "subtitle",
-    date: "August 1st, 2022",
-    thumbnail: "https://assets.website-files.com/5746d4c4a3e009bb4d9ac858/59f7acb9eac5ea0001c28231_michael-discenza-331452%20(1).jpg"
-});
-  const [blogs, setBlogs] = useState([{
-    id: 1,
-    title: "Why househacking",
-    subtitle: "subtitle",
-    date: "August 1st, 2022",
-    thumbnail: "https://assets.website-files.com/5746d4c4a3e009bb4d9ac858/59f7acb9eac5ea0001c28231_michael-discenza-331452%20(1).jpg"
-}]);
+  const [featureBlog, setFeatureBlog] = useState({});
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
     let mounted = true;
     getBlogs().then((data) => {
-      console.log(data)
       if (mounted) {
         renderBlogs(data);
       }
@@ -40,8 +27,10 @@ const Blog = () => {
 
   const renderBlogs = (blogs) => {
     setBlogs(blogs.filter(blog => !blog.isFeatured));
-    setFeatureBlog(blogs.filter(blog => blog.isFeatured));
+    const featureBlogTest = blogs.filter(blog => blog.isFeatured)
+    setFeatureBlog(featureBlogTest[0]);
   };
+
 
 
   const previews = blogs.map((blog) => (

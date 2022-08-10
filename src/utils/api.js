@@ -1,6 +1,6 @@
-const baseUrl = "http://localhost:3001"
+// const baseUrl = "http://localhost:3001"
 
-// const baseUrl = "https://brad-dosch-backend.herokuapp.com"
+const baseUrl = "https://brad-dosch-backend.herokuapp.com"
 
 const api = {
     getTestimonials: async () => {
@@ -78,6 +78,16 @@ const api = {
         })
         return res.json()
     },
+    // getParagraphsOfBlog: async (paragraphObj) => {
+    //     const res = await fetch(`${baseUrl}/api/paragraphs`, {
+    //         method: "POST",
+    //         body: JSON.stringify(paragraphObj),
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     })
+    //     return res.json()
+    // },
     login: async (email, password) => {
         const res = await fetch(`${baseUrl}/api/users/login`, {
             method: "POST",

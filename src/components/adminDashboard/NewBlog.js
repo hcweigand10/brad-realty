@@ -3,18 +3,18 @@ import moment from "moment"
 
 const NewBlog = ({postNewBlog}) => {
     const [paragraphGroups, setParagraphGroups] = useState([<ParagraphForm index={1} key={1}/>])
-    let numParagraphs = 1;
+    const [numParagraphs, setNumParagraphs] = useState(1);
 
     const deleteParagraph = (e) => {
         e.preventDefault()
-        numParagraphs--
         setParagraphGroups(paragraphGroups.splice(0,paragraphGroups.length-1))
+        setNumParagraphs(numParagraphs-1)
     }
 
     const addParagraph = (e) => {
         e.preventDefault()
-        numParagraphs++
-        setParagraphGroups([...paragraphGroups, <ParagraphForm index={numParagraphs} key={numParagraphs}/>])
+        setParagraphGroups([...paragraphGroups, <ParagraphForm index={numParagraphs+1} key={numParagraphs+1}/>])
+        setNumParagraphs(numParagraphs+1)
     }
 
     const handleBlogSubmit = (e) => {
@@ -26,13 +26,14 @@ const NewBlog = ({postNewBlog}) => {
             date: moment().format('MMMM Do, YYYY')
         }
         const paragraphs = []
-        for (let i = 0; i < paragraphs.length; i++) {
+        for (let i = 1; i < paragraphGroups.length+1; i++) {
             const paragraphObj = {
                 paragraph_title: document.getElementById(`paragraph-title-${i}`).value,
                 content: document.getElementById(`paragraph-content-${i}`).value,
                 image_url: document.getElementById(`paragraph-thumbnail-${i}`).value,
                 blogId: null
             }
+            console.log(paragraphObj)
             paragraphs.push(paragraphObj)
         }
         postNewBlog(blogObj, paragraphs)

@@ -143,7 +143,7 @@ const Home = () => {
             </p>
           </div>
           <Link
-            to="/"
+            to="/testimonials"
             class="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}

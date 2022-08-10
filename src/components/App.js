@@ -67,7 +67,7 @@ const App = () => {
             console.log(err);
         });
     }
-}, );
+}, []);
 
 const logMeIn = async (e) => {
     console.log("LOGGING IN!", loginInfo)
@@ -79,7 +79,6 @@ const logMeIn = async (e) => {
             setLoggedIn(true)
             setToken(data.token);
             localStorage.setItem("token", data.token);
-            window.location.replace("/")
           } else {
             alert("Invalid Login Credentials")
             setLoginInfo({
@@ -98,7 +97,6 @@ const logMeIn = async (e) => {
             ...loginInfo,
             [e.target.name]:e.target.value
           })
-          console.log(loginInfo)
       }
 
 
@@ -108,7 +106,7 @@ const logMeIn = async (e) => {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/blog" element={<Blog/>}/>
-            <Route path="/blog/:id" element={<BlogItem blog={sampleBlog}/>}/>
+            <Route path="/blog/:id" element={<BlogItem/>}/>
             <Route path="/tools" element={<Tools/>}/>
             <Route path="/testimonials" element={<Testimonials/>}/>
             <Route path="/contact" element={<Contact/>}/>            

@@ -4,7 +4,7 @@ import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 import BlogRow from "./BlogRow";
 import NewBlog from "./NewBlog";
 import "./adminDashboard.css";
-import moment from "moment"
+
 
 const AdminDashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,6 +13,17 @@ const AdminDashboard = () => {
   const [viewAll, setView] = useState(true);
 
   useEffect(() => {
+    const getBlogs = async () => {
+      const blogsData = await api.getBlogs();
+      if (!featuredId) {
+        blogsData.forEach(element => {
+          if (element.isFeatured) {
+            setFeaturedId(element.id)
+          }
+        });
+      }
+      return blogsData;
+    };
     setIsLoading(true);
     let mounted = true;
     getBlogs().then((data) => {
@@ -24,17 +35,6 @@ const AdminDashboard = () => {
     return () => (mounted = false);
   }, [featuredId]);
 
-  const getBlogs = async () => {
-    const blogsData = await api.getBlogs();
-    if (!featuredId) {
-      blogsData.forEach(element => {
-        if (element.isFeatured) {
-          setFeaturedId(element.id)
-        }
-      });
-    }
-    return blogsData;
-  };
 
   const renderBlogs = (blogsData) => {
     setBlogs(blogsData);
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
   const deleteBlog = async (blogId) => {
     if (window.confirm(`Are you sure you want to delete the blog with id: ${blogId}`)) {
-      const res = await api.deleteBlog(blogId)
+      await api.deleteBlog(blogId)
       window.location.reload()
     }
   }
@@ -50,13 +50,9 @@ const AdminDashboard = () => {
   const setFeatureBlog = async (newBlogId) => {
     setIsLoading(true)
     if (featuredId) {
-      console.log("remove feature")
-      const res1 = await api.removeFeatureBlog(featuredId)
-      console.log(res1)
+      await api.removeFeatureBlog(featuredId)
     }
-    console.log("add feature: ", newBlogId)
-    const res2 = await api.addFeatureBlog(newBlogId)
-    console.log(res2)
+    await api.addFeatureBlog(newBlogId)
     setFeaturedId(newBlogId)
   }
 
@@ -66,8 +62,16 @@ const AdminDashboard = () => {
       paragraphObj.blogId = newBlog.id
       console.log(paragraphObj)
     })
-    // add paragraphs
     console.log(newBlog)
+    postNewParagraphs(paragraphs)
+    window.location.reload()
+  }
+
+  const postNewParagraphs = async (paragraphArray) => {
+    for await (const paragraphObj of paragraphArray) {
+      const res = await api.addParagraph(paragraphObj)
+      console.log(res)
+    }
   }
 
 
