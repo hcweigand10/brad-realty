@@ -72,7 +72,7 @@ const Testimonials = () => {
             </Form.Group>
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>City</Form.Label>
-              <Form.Control id="testimonial-city" type="text" placeholder="Elwynn Forrest" />
+              <Form.Control id="testimonial-city" type="text" placeholder="Elwynn Forest" />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>State</Form.Label>
