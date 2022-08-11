@@ -56,7 +56,8 @@ const Testimonials = () => {
       </div>
 
       <div className="mt-5">
-        <h3 className="">Worked with Brad lately? Tell us how it went!</h3>
+        <a href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz" className="">Worked with Brad lately? Tell us how it went!</a>
+        
         {/* <Form onSubmit={postNewTestimonial}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">
