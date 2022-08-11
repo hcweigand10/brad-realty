@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Carousel, Col, Form, Row } from "react-bootstrap";
+import { Carousel} from "react-bootstrap";
 import TestimonialItem from "../components/testimonialItem/TestimonialItem";
 import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner";
 import api from "../utils/api";
@@ -20,18 +20,18 @@ const Testimonials = () => {
     setIsLoading(false);
   };
 
-  const postNewTestimonial = async (e) => {
-    e.preventDefault()
-    const testimonialObj = {
-      name: document.getElementById("testimonial-name").value,
-      email: document.getElementById("testimonial-email").value,
-      city: document.getElementById("testimonial-city").value,
-      state: document.getElementById("testimonial-state").value,
-      review: document.getElementById("testimonial-review").value,
-    }
-    await api.addTestimonial(testimonialObj)
-    window.location.reload()
-  }
+  // const postNewTestimonial = async (e) => {
+  //   e.preventDefault()
+  //   const testimonialObj = {
+  //     name: document.getElementById("testimonial-name").value,
+  //     email: document.getElementById("testimonial-email").value,
+  //     city: document.getElementById("testimonial-city").value,
+  //     state: document.getElementById("testimonial-state").value,
+  //     review: document.getElementById("testimonial-review").value,
+  //   }
+  //   await api.addTestimonial(testimonialObj)
+  //   window.location.reload()
+  // }
 
   const testimonialItems = testimonials.map((testimonial,index) => {
     return (
