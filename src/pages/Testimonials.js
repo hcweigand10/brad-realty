@@ -14,9 +14,9 @@ const Testimonials = () => {
   }, []);
 
   const getTestimonials = async () => {
-    const testimonialsRaw = await api.getTestimonials();
-    console.log(testimonialsRaw);
-    setTestimonials(testimonialsRaw);
+    const agentInfo = await api.getZillowAgentInfo();
+    console.log(agentInfo);
+    setTestimonials(agentInfo.reviewsData.reviews)
     setIsLoading(false);
   };
 
@@ -33,9 +33,9 @@ const Testimonials = () => {
     window.location.reload()
   }
 
-  const testimonialItems = testimonials.map((testimonial) => {
+  const testimonialItems = testimonials.map((testimonial,index) => {
     return (
-      <Carousel.Item className="justify-content-center" key={testimonial.id}>
+      <Carousel.Item className="justify-content-center" key={index}>
         <TestimonialItem testimonialObj={testimonial}/>
       </Carousel.Item>
     );
@@ -43,6 +43,8 @@ const Testimonials = () => {
 
   return (
     <div className="container mt-3">
+      <h4>Zillow Ratings & Reviews ({testimonials.length})</h4>
+      <h6 className="text-muted">Sorting by most recent</h6>
       <div className="my-5" style={{ minHeight: "260px" }}>
         {isLoading ? (
           <LoadingSpinner />
@@ -55,7 +57,7 @@ const Testimonials = () => {
 
       <div className="mt-5">
         <h3 className="">Worked with Brad lately? Tell us how it went!</h3>
-        <Form onSubmit={postNewTestimonial}>
+        {/* <Form onSubmit={postNewTestimonial}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
@@ -139,7 +141,7 @@ const Testimonials = () => {
           <button className="btn btn-primary" type="submit">
         Submit
       </button>
-        </Form>
+        </Form> */}
       </div>
     </div>
   );

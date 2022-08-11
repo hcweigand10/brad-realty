@@ -89,3 +89,11 @@ code {
   box-shadow: 0px 0px 5px darkgray;
 }
 
+/* Testimonials Page */
+.blue-star {
+  color: blue
+}
+
+.white-star {
+  color: lightgrey;
+}

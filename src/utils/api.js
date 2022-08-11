@@ -2,6 +2,14 @@
 
 const baseUrl = "https://brad-dosch-backend.herokuapp.com"
 
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'ea0c6df2d1mshccd1bb367b4a2bap1b7ecbjsn44477cc7dbed',
+        'X-RapidAPI-Host': 'zillow56.p.rapidapi.com'
+    }
+}
+
 const api = {
     getTestimonials: async () => {
         const testimonials = await fetch(`${baseUrl}/api/testimonials`)
@@ -16,6 +24,11 @@ const api = {
             }
         })
         return res.json()
+    },
+    getZillowAgentInfo: async () => {
+        const res = await fetch('https://zillow56.p.rapidapi.com/agent?username=bradley-dosch0', options)
+        const response = res.json()
+        return response;
     },
     getBlogs: async () => {
         const blogs = await fetch(`${baseUrl}/api/blogs`)
