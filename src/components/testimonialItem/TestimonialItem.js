@@ -8,8 +8,8 @@ const TestimonialItem = ({ testimonialObj }) => {
   const [showMore, setShowMore] = useState(false)
   // const [title, setTitle] = useState("")
 
-  const overallRating = (testimonialObj.subRatings.reduce((prev,current)=> prev+parseInt(current.amount), 0))/400;
-  const date = `${testimonialObj.reviewMonth}/${testimonialObj.reviewDay}/${testimonialObj.reviewYear}`
+  const overallRating = (testimonialObj.local_knowledge + testimonialObj.process_expertise + testimonialObj.responsiveness + testimonialObj.negotiation_skills)/4;
+
   
   const reviewTitles = [
     "Will never recommend",
@@ -20,20 +20,8 @@ const TestimonialItem = ({ testimonialObj }) => {
   
   const title = overallRating === 5 ? reviewTitles[3] : reviewTitles[Math.floor(overallRating)-1]
   
-  const reviewBody = testimonialObj.reviewBodyMain.concat(testimonialObj.reviewBodyExtra)
 
-  // var getReviewTitle = () => {
-    
-  //   if (overallRating >= 4) {
-  //     setTitle(reviewTitles[3])
-  //   } else if (overallRating >= 3 && overallRating <4) {
-  //     setTitle(reviewTitles[2])
-  //   } else if (overallRating >= 2 && overallRating <3) {
-  //     setTitle(reviewTitles[1])
-  //   } else {
-  //     setTitle(reviewTitles[0])
-  //   }
-  // }
+ 
 
   
   return (
@@ -45,20 +33,20 @@ const TestimonialItem = ({ testimonialObj }) => {
           <h5 className="col-3 my-auto" style={{textAlign: "end"}}>5.0 <FontAwesomeIcon icon={faStar} style={{color: "blue"}}/></h5>
         </div>
         <div className="mb-3" style={{lineHeight: "120%"}}>
-          <p className="text-muted mb-1">{date} - {testimonialObj.reviewerDisplayName}</p>
-          <p className="text-muted mb-1">{testimonialObj.revieweeWorkDone}</p>
+          <p className="text-muted mb-1">{testimonialObj.date} - {testimonialObj.name}</p>
+          <p className="text-muted mb-1">{testimonialObj.work_done}</p>
         </div>
         <div>
           <ul className="ps-0" style={{listStyleType: "none"}}>
-            <li className="mb-1"><ReviewStars rating={parseInt(testimonialObj.subRatings[0].amount)/100}/><span className="ms-3">Local Knowledge</span></li>
-            <li className="mb-1"><ReviewStars rating={parseInt(testimonialObj.subRatings[0].amount)/100}/><span className="ms-3">Process Expertise</span></li>
-            <li className="mb-1"><ReviewStars rating={parseInt(testimonialObj.subRatings[0].amount)/100}/><span className="ms-3">Responsiveness</span></li>
-            <li className="mb-1"><ReviewStars rating={parseInt(testimonialObj.subRatings[0].amount)/100}/><span className="ms-3">Negotiation Skills</span></li>
+            <li className="mb-1"><ReviewStars rating={testimonialObj.local_knowledge}/><span className="ms-3">Local Knowledge</span></li>
+            <li className="mb-1"><ReviewStars rating={testimonialObj.process_expertise}/><span className="ms-3">Process Expertise</span></li>
+            <li className="mb-1"><ReviewStars rating={testimonialObj.responsiveness}/><span className="ms-3">Responsiveness</span></li>
+            <li className="mb-1"><ReviewStars rating={testimonialObj.negotiation_skills}/><span className="ms-3">Negotiation Skills</span></li>
           </ul>
         </div>
         <div>
           <p className="mb-1">
-            {showMore ? reviewBody : `${reviewBody.substring(0, 250)}...`}
+            {showMore ? testimonialObj.review_body : `${testimonialObj.review_body.substring(0, 250)}...`}
           </p>
           <button className="btn btn-primary" onClick={() => setShowMore(!showMore)}><FontAwesomeIcon icon={faPlus} className="me-1"/>Show more</button>
         </div>

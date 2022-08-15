@@ -14,24 +14,11 @@ const Testimonials = () => {
   }, []);
 
   const getTestimonials = async () => {
-    const agentInfo = await api.getZillowAgentInfo();
-    console.log(agentInfo);
-    setTestimonials(agentInfo.reviewsData.reviews)
+    const testimonialsData = await api.getTestimonials();
+    console.log(testimonialsData);
+    setTestimonials(testimonialsData)
     setIsLoading(false);
   };
-
-  // const postNewTestimonial = async (e) => {
-  //   e.preventDefault()
-  //   const testimonialObj = {
-  //     name: document.getElementById("testimonial-name").value,
-  //     email: document.getElementById("testimonial-email").value,
-  //     city: document.getElementById("testimonial-city").value,
-  //     state: document.getElementById("testimonial-state").value,
-  //     review: document.getElementById("testimonial-review").value,
-  //   }
-  //   await api.addTestimonial(testimonialObj)
-  //   window.location.reload()
-  // }
 
   const testimonialItems = testimonials.map((testimonial,index) => {
     return (

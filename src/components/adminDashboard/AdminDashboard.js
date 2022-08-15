@@ -4,6 +4,7 @@ import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 import BlogRow from "./BlogRow";
 import NewBlog from "./NewBlog";
 import "./adminDashboard.css";
+import moment from "moment";
 
 
 const AdminDashboard = () => {
@@ -74,6 +75,46 @@ const AdminDashboard = () => {
     }
   }
 
+  const checkZillowId = (reviewId, testimonialArr) => {
+    testimonialArr.forEach((testimonial) => {
+      if (testimonial.zillow_id === reviewId) {
+        return false
+      }
+    })
+    return true
+  }
+
+  const updateZillowReviews = async () => {
+    setIsLoading(true)
+    const currentTestimonials = await api.getTestimonials();
+    console.log(currentTestimonials)
+    const zillowInfo = await api.getZillowAgentInfo();
+    const zillowReviews = zillowInfo.reviewsData.reviews;
+    const newReviews = zillowReviews.filter((review) => {
+      return checkZillowId(review.reviewId, currentTestimonials)
+    })
+    console.log(newReviews)
+    if (newReviews.length > 0) {
+      for await (const review of newReviews) {
+        const dateString = `${review.reviewMonth}/${review.reviewDay}/${review.reviewYear}`
+        const datePretty = moment(dateString, "MM/DD/YYYY").format("MMMM Do, YYYY")
+        const reviewObj = {
+          zillow_id: review.reviewId,
+          name: review.reviewerDisplayName,
+          date: datePretty,
+          work_done: review.revieweeWorkDone,
+          review_body: review.reviewBodyMain.concat(review.reviewBodyExtra),
+          local_knowledge: review.subRatings[0].amount/100,
+          process_expertise: review.subRatings[1].amount/100,
+          responsiveness: review.subRatings[2].amount/100,
+          negotiation_skills: review.subRatings[3].amount/100,
+        }
+        const res = await api.addTestimonial(reviewObj)
+        console.log(res)
+      }
+    }
+    setIsLoading(false)
+  }
 
   const blogCards = blogs.map((blog) => {
     return <BlogRow blog={blog} deleteBlog={deleteBlog} setFeatureBlog={setFeatureBlog} key={blog.id}/>;
@@ -110,10 +151,14 @@ const AdminDashboard = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <div>{viewAll ? <div className="row mx-0">{blogCards}</div> : 
-          <div>
-            <NewBlog postNewBlog={postNewBlog}/>
-          </div>}
+        <div>
+
+          <div>{viewAll ? <div className="row mx-0">{blogCards}</div> : 
+            <div>
+              <NewBlog postNewBlog={postNewBlog}/>
+            </div>}
+          </div>
+          <button className="btn btn-primary" onClick={updateZillowReviews}>Update Reviews</button>
         </div>
       )}
     </div>
