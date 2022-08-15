@@ -26,19 +26,26 @@ const Blog = () => {
   };
 
   const renderBlogs = (blogs) => {
-    setBlogs(blogs.filter(blog => !blog.isFeatured));
-    const featureBlogTest = blogs.filter(blog => blog.isFeatured)
-    setFeatureBlog(featureBlogTest[0]);
+    if (blogs.length > 0) {
+
+      setBlogs(blogs.filter(blog => !blog.isFeatured));
+      const featureBlogTest = blogs.filter(blog => blog.isFeatured)
+      if (featureBlogTest.length > 0) {
+        setFeatureBlog(featureBlogTest[0]);
+      } else {
+        setFeatureBlog(blogs[0]);
+      }
+    }
   };
 
 
 
-  const previews = blogs.map((blog) => (
-    <BlogPreview blog={blog} />
+  const previews = blogs.map((blog, index) => (
+    <BlogPreview blog={blog} key={index} />
   ));
 
   return (
-    <div className="container mt-5">
+    <div style={{fontFamily: "Compass Sans"}} className="container mt-5">
       <div className="row">
         <div className="col-md-3">Welcome to the blog!</div>
         <div className="col-md-9">

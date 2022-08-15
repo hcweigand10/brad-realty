@@ -41,7 +41,8 @@ const NewBlog = ({postNewBlog}) => {
     
 
     return (
-        <form id='new-blog-form' onSubmit={handleBlogSubmit}>
+        <form className='my-4' id='new-blog-form' onSubmit={handleBlogSubmit}>
+            <h4>Blog Info</h4>
   <div class="form-group">
     <label htmlFor="FormControlInputTitle">Blog Title</label>
     <input type="text" class="form-control" id="FormControlInputTitle"/>
@@ -54,6 +55,7 @@ const NewBlog = ({postNewBlog}) => {
     <label htmlFor="FormControlInputThumbnail">Thumbnail URL</label>
     <input type="text" class="form-control" id="FormControlInputThumbnail"/>
   </div>
+
   
   {paragraphGroups}
   <button className='btn btn-secondary' onClick={addParagraph}>Add Paragraph</button>
@@ -65,7 +67,8 @@ const NewBlog = ({postNewBlog}) => {
 
 const ParagraphForm = ({index}) => {
     return (
-<div id={`form-group-${index}`}>
+        <div className='my-2 py-2' id={`form-group-${index}`}>
+    <h4>Paragraph #{index}</h4>
     <div className='form-group'>
         <label htmlFor={`paragraph-title-${index}`}>Paragraph Title</label>
         <input type="text" class="form-control" id={`paragraph-title-${index}`}/>

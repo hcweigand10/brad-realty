@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="home-co" style={{ backgroundColor: "white" }}>
-      <div class="px-4 py-5 text-light" id="home-background">
+    <div className="home-co" style={{ backgroundColor: "white", fontFamily: "Compass Sans" }}>
+      <div class="px-4 py-5 text-light" id="home-background" >
         <div class="row flex-lg-row align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
             <img

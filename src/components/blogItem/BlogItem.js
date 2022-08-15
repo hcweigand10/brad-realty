@@ -23,7 +23,7 @@ const BlogItem = () => {
     }
 
     return (
-        <div className='pt-2'>
+        <div className='pt-2' style={{fontFamily: "Compass Sans"}}>
             <div className='container justify-content-center'>
                 <div className='' style={{position: "relative", top: "50px", left: "0"}}>
                     <a className='go-back-link' href='/blog' style={{color: "black", textDecoration: "underline"}}><i class="fas fa-arrow-left me-1"></i>Go Back</a>

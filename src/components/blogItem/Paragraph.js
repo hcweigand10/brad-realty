@@ -4,7 +4,7 @@ const Paragraph = ({para, index}) => {
     const odd = (index%2===0)
 
     return (
-        <div className='my-5'>
+        <div className='my-5' style={{fontFamily: "Compass Sans"}}>
             <h2 className='text-center mb-4' style={{fontWeight: "bold"}}>{para.paragraph_title}</h2>
             {para.image_url ? (
                 <div className='align-items-center'>

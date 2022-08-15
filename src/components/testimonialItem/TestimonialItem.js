@@ -25,12 +25,11 @@ const TestimonialItem = ({ testimonialObj }) => {
 
   
   return (
-    <div class="card mx-auto col-9 col-md-7 col-lg-6" >
-      <div class="card-body">
-        <div className="row mb-3">
-          <h2 className="col-8 my-auto">{title}</h2>
-          <span className="col-1 my-auto">|</span>
-          <h5 className="col-3 my-auto" style={{textAlign: "end"}}>5.0 <FontAwesomeIcon icon={faStar} style={{color: "blue"}}/></h5>
+    <div class="card mx-auto col-11 col-md-7 col-lg-6 mb-4 shadow" >
+      <div class="card-body p-3">
+        <div className="row w-100 mb-3 mx-auto">
+          <h3 className="col-8 my-auto p-0">{title}</h3>
+          <h5 className="col-4 my-auto p-0" style={{textAlign: "end"}}>5.0 <FontAwesomeIcon icon={faStar} style={{color: "blue"}}/></h5>
         </div>
         <div className="mb-3" style={{lineHeight: "120%"}}>
           <p className="text-muted mb-1">{testimonialObj.date} - {testimonialObj.name}</p>

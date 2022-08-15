@@ -6,8 +6,8 @@ const Admin = ({loginInfo, handleInputChange, logMeIn, loggedIn}) => {
   
 
   return (
-    <div className="container">
-      <h2>Welcome Back, Brad</h2>
+    <div className="container mt-5">
+      <h2>Welcome back, Brad</h2>
       {loggedIn ? (
         <AdminDashboard />
       ) : (

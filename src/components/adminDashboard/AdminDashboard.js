@@ -6,20 +6,19 @@ import NewBlog from "./NewBlog";
 import "./adminDashboard.css";
 import moment from "moment";
 
-
 const AdminDashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [blogs, setBlogs] = useState([]);
-  const [featuredId, setFeaturedId] = useState(null)
+  const [featuredId, setFeaturedId] = useState(null);
   const [viewAll, setView] = useState(true);
 
   useEffect(() => {
     const getBlogs = async () => {
       const blogsData = await api.getBlogs();
       if (!featuredId) {
-        blogsData.forEach(element => {
+        blogsData.forEach((element) => {
           if (element.isFeatured) {
-            setFeaturedId(element.id)
+            setFeaturedId(element.id);
           }
         });
       }
@@ -36,91 +35,103 @@ const AdminDashboard = () => {
     return () => (mounted = false);
   }, [featuredId]);
 
-
   const renderBlogs = (blogsData) => {
     setBlogs(blogsData);
   };
 
   const deleteBlog = async (blogId) => {
-    if (window.confirm(`Are you sure you want to delete the blog with id: ${blogId}`)) {
-      await api.deleteBlog(blogId)
-      window.location.reload()
+    if (
+      window.confirm(
+        `Are you sure you want to delete the blog with id: ${blogId}`
+      )
+    ) {
+      await api.deleteBlog(blogId);
+      window.location.reload();
     }
-  }
+  };
 
   const setFeatureBlog = async (newBlogId) => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (featuredId) {
-      await api.removeFeatureBlog(featuredId)
+      await api.removeFeatureBlog(featuredId);
     }
-    await api.addFeatureBlog(newBlogId)
-    setFeaturedId(newBlogId)
-  }
+    await api.addFeatureBlog(newBlogId);
+    setFeaturedId(newBlogId);
+  };
 
   const postNewBlog = async (blogObj, paragraphs) => {
-    const newBlog = await api.addBlog(blogObj)
+    const newBlog = await api.addBlog(blogObj);
     paragraphs.forEach((paragraphObj) => {
-      paragraphObj.blogId = newBlog.id
-      console.log(paragraphObj)
-    })
-    console.log(newBlog)
-    postNewParagraphs(paragraphs)
-    window.location.reload()
-  }
+      paragraphObj.blogId = newBlog.id;
+      console.log(paragraphObj);
+    });
+    console.log(newBlog);
+    await postNewParagraphs(paragraphs);
+    window.location.reload();
+  };
 
   const postNewParagraphs = async (paragraphArray) => {
     for await (const paragraphObj of paragraphArray) {
-      const res = await api.addParagraph(paragraphObj)
-      console.log(res)
+      const res = await api.addParagraph(paragraphObj);
+      console.log(res);
     }
-  }
+  };
 
   const checkZillowId = (reviewId, testimonialArr) => {
+    let foundFlag = false
     testimonialArr.forEach((testimonial) => {
       if (testimonial.zillow_id === reviewId) {
-        return false
+        foundFlag = true
       }
-    })
-    return true
-  }
+    });
+    return foundFlag;
+  };
 
   const updateZillowReviews = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     const currentTestimonials = await api.getTestimonials();
-    console.log(currentTestimonials)
     const zillowInfo = await api.getZillowAgentInfo();
     const zillowReviews = zillowInfo.reviewsData.reviews;
     const newReviews = zillowReviews.filter((review) => {
-      return checkZillowId(review.reviewId, currentTestimonials)
-    })
-    console.log(newReviews)
+      return !checkZillowId(parseInt(review.reviewId), currentTestimonials);
+    });
     if (newReviews.length > 0) {
       for await (const review of newReviews) {
-        const dateString = `${review.reviewMonth}/${review.reviewDay}/${review.reviewYear}`
-        const datePretty = moment(dateString, "MM/DD/YYYY").format("MMMM Do, YYYY")
+        const dateString = `${review.reviewMonth}/${review.reviewDay}/${review.reviewYear}`;
+        const datePretty = moment(dateString, "MM/DD/YYYY").format(
+          "MMMM Do, YYYY"
+        );
         const reviewObj = {
           zillow_id: review.reviewId,
           name: review.reviewerDisplayName,
           date: datePretty,
           work_done: review.revieweeWorkDone,
           review_body: review.reviewBodyMain.concat(review.reviewBodyExtra),
-          local_knowledge: review.subRatings[0].amount/100,
-          process_expertise: review.subRatings[1].amount/100,
-          responsiveness: review.subRatings[2].amount/100,
-          negotiation_skills: review.subRatings[3].amount/100,
-        }
-        const res = await api.addTestimonial(reviewObj)
-        console.log(res)
+          local_knowledge: review.subRatings[0].amount / 100,
+          process_expertise: review.subRatings[1].amount / 100,
+          responsiveness: review.subRatings[2].amount / 100,
+          negotiation_skills: review.subRatings[3].amount / 100,
+        };
+        const res = await api.addTestimonial(reviewObj);
+        console.log(res);
       }
     }
-    setIsLoading(false)
-  }
+    setIsLoading(false);
+    localStorage.setItem("last-updated", moment().format("MMMM Do, YYYY"));
+  };
+
+  const lastUpdatedDate = localStorage.getItem("last-updated");
 
   const blogCards = blogs.map((blog) => {
-    return <BlogRow blog={blog} deleteBlog={deleteBlog} setFeatureBlog={setFeatureBlog} key={blog.id}/>;
+    return (
+      <BlogRow
+        blog={blog}
+        deleteBlog={deleteBlog}
+        setFeatureBlog={setFeatureBlog}
+        key={blog.id}
+      />
+    );
   });
-
-
 
   return (
     <div className="" id="admin-dashboard">
@@ -152,19 +163,33 @@ const AdminDashboard = () => {
         <LoadingSpinner />
       ) : (
         <div>
-
-          <div>{viewAll ? <div className="row mx-0">{blogCards}</div> : 
-            <div>
-              <NewBlog postNewBlog={postNewBlog}/>
-            </div>}
+          <div>
+            {viewAll ? (
+              <div>
+                <div className="row mx-0">{blogCards}</div>
+                <hr/>
+                <div>
+                  <button
+                    className="btn btn-primary"
+                    onClick={updateZillowReviews}
+                  >
+                    Update Reviews
+                  </button>
+                  <p className="text-muted">
+                    Last updated from this device: {lastUpdatedDate}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <NewBlog postNewBlog={postNewBlog} />
+              </div>
+            )}
           </div>
-          <button className="btn btn-primary" onClick={updateZillowReviews}>Update Reviews</button>
         </div>
       )}
     </div>
   );
 };
-
-
 
 export default AdminDashboard;

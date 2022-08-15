@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         
         <footer class="footer mt-auto">
-             <div class="container col-10 col-md-10 col-lg-8 col-xl-6 p-3 pb-0">
+             <div class="container col-10 col-md-10 col-lg-8 col-xl-6 p-3 pb-0" style={{fontFamily: "Compass Sans"}}>
             {/* <!-- Section: Links --> */}
             <section class="">
                 {/* <!--Grid row--> */}

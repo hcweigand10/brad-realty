@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Carousel} from "react-bootstrap";
 import TestimonialItem from "../components/testimonialItem/TestimonialItem";
 import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner";
 import api from "../utils/api";
@@ -15,122 +14,34 @@ const Testimonials = () => {
 
   const getTestimonials = async () => {
     const testimonialsData = await api.getTestimonials();
-    console.log(testimonialsData);
     setTestimonials(testimonialsData)
     setIsLoading(false);
   };
 
   const testimonialItems = testimonials.map((testimonial,index) => {
     return (
-      <Carousel.Item className="justify-content-center" key={index}>
-        <TestimonialItem testimonialObj={testimonial}/>
-      </Carousel.Item>
+        <TestimonialItem testimonialObj={testimonial} key={index}/>
     );
   });
 
   return (
-    <div className="container mt-3">
-      <h4>Zillow Ratings & Reviews ({testimonials.length})</h4>
-      <h6 className="text-muted">Sorting by most recent</h6>
-      <div className="my-5" style={{ minHeight: "260px" }}>
+    <div className="container mt-3" >
+      <h4 style={{fontFamily: "Compass Sans"}}>Zillow Ratings & Reviews ({testimonials.length})</h4>
+      <h6 className="text-muted" style={{fontFamily: "Compass Sans"}}>Sorting by most recent</h6>
+      <div className="my-2" style={{fontFamily: "Compass Sans"}}>
+        <a href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz" className="">Worked with Brad lately? Tell us how it went!</a>
+        
+      </div>
+      <div className="my-4" style={{ minHeight: "260px" }}>
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <Carousel fade variant="dark" indicators={false} className="my-3">
+          <div className="">
             {testimonialItems}
-          </Carousel>
+          </div>
         )}
       </div>
 
-      <div className="mt-5">
-        <a href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz" className="">Worked with Brad lately? Tell us how it went!</a>
-        
-        {/* <Form onSubmit={postNewTestimonial}>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control id="testimonial-name" type="text" placeholder="Ash Ketchum" />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>Email <span className="text-muted" style={{fontStyle: "italic"}}>(We won't send you anything)</span></Form.Label>
-              <Form.Control
-                id="testimonial-email"
-                type="email"
-                placeholder="ash.ketchum@pokemon.com"
-              />
-            </Form.Group>
-            <Form.Group as={Col} controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control id="testimonial-city" type="text" placeholder="Elwynn Forest" />
-            </Form.Group>
-            <Form.Group as={Col} controlId="formGridState">
-              <Form.Label>State</Form.Label>
-              <Form.Select id="testimonial-state" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option>AL</option>
-                <option>AK</option>
-                <option>AZ</option>
-                <option>AR</option>
-                <option>CA</option>
-                <option>CO</option>
-                <option>CT</option>
-                <option>DE</option>
-                <option>FL</option>
-                <option>GA</option>
-                <option>HI</option>
-                <option>ID</option>
-                <option>IL</option>
-                <option>IN</option>
-                <option>IA</option>
-                <option>KS</option>
-                <option>KY</option>
-                <option>LA</option>
-                <option>ME</option>
-                <option>MD</option>
-                <option>MA</option>
-                <option>MI</option>
-                <option>MN</option>
-                <option>MS</option>
-                <option>MO</option>
-                <option>MT</option>
-                <option>NE</option>
-                <option>NV</option>
-                <option>NH</option>
-                <option>NJ</option>
-                <option>NM</option>
-                <option>NY</option>
-                <option>NC</option>
-                <option>ND</option>
-                <option>OH</option>
-                <option>OK</option>
-                <option>OR</option>
-                <option>PA</option>
-                <option>RI</option>
-                <option>SC</option>
-                <option>SD</option>
-                <option>TN</option>
-                <option>TX</option>
-                <option>UT</option>
-                <option>VT</option>
-                <option>VA</option>
-                <option>WA</option>
-                <option>WV</option>
-                <option>WI</option>
-                <option>WY</option>
-              </Form.Select>
-            </Form.Group>
-          </Row>
-
-          <Form.Group className="mb-3" controlId="formGridText">
-            <Form.Label>Your Review</Form.Label>
-            <Form.Control id="testimonial-review" as="textarea" rows={4} placeholder="'Holy smokes this guy is good...'"/>
-          </Form.Group>
-          <button className="btn btn-primary" type="submit">
-        Submit
-      </button>
-        </Form> */}
-      </div>
     </div>
   );
 };

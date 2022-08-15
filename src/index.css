@@ -14,6 +14,16 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: 'Compass Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://d11k51v32u8ru4.cloudfront.net/fonts/2.3.1/CompassSans-Regular.woff2') format('woff2'),
+    url('https://d11k51v32u8ru4.cloudfront.net/fonts/2.3.1/CompassSans-Regular.woff') format('woff'),
+    url('https://d11k51v32u8ru4.cloudfront.net/fonts/2.3.1/CompassSans-Regular.ttf') format('truetype');
+}
+
+
 
 /* HOME PAGE */
 #override #home-background {
