@@ -36,7 +36,7 @@ const Testimonials = () => {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <div className="py-4 bg-white shadow-sm mx-auto">
+          <div className="py-4 shadow-sm mx-auto">
             {testimonialItems}
           </div>
         )}
