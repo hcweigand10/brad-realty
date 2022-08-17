@@ -137,9 +137,7 @@ const Home = () => {
           </h2>
           <div className="my-4">
             <p>
-              Paragraph of text beneath the heading to explain the heading.
-              We'll add onto it with another sentence and probably just keep
-              going until we run out of words.
+              Interested to see how other people have experienced working with me? Checkout my Zillow reviews below.
             </p>
           </div>
           <Link
@@ -148,7 +146,7 @@ const Home = () => {
             id="service-1-call"
             style={{ width: "150px" }}
           >
-            Learn More
+            Customer Testimonials
           </Link>
         </div>
       </div>
@@ -160,7 +158,7 @@ const Home = () => {
           <div className="my-4">
             <p>
               Click below to schedule a time to meet. I'm open to anything from
-              a simple phone call to cup of coffee.
+              a simple phone call to a cup of coffee.
             </p>
           </div>
           <a

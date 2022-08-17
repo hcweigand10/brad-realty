@@ -29,7 +29,7 @@ const Testimonials = () => {
       <h4 style={{fontFamily: "Compass Sans"}}>Zillow Ratings & Reviews ({testimonials.length})</h4>
       <h6 className="text-muted" style={{fontFamily: "Compass Sans"}}>Sorting by most recent</h6>
       <div className="my-2" style={{fontFamily: "Compass Sans"}}>
-        <a href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz" className="">Worked with Brad lately? Tell us how it went!</a>
+        <a href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz" className="">Worked with me lately? Tell me how it went!</a>
         
       </div>
       <div className="my-4" style={{ minHeight: "260px" }}>

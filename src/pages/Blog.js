@@ -27,9 +27,8 @@ const Blog = () => {
 
   const renderBlogs = (blogs) => {
     if (blogs.length > 0) {
-
-      setBlogs(blogs.filter(blog => !blog.isFeatured));
-      const featureBlogTest = blogs.filter(blog => blog.isFeatured)
+      setBlogs(blogs.filter((blog) => !blog.isFeatured));
+      const featureBlogTest = blogs.filter((blog) => blog.isFeatured);
       if (featureBlogTest.length > 0) {
         setFeatureBlog(featureBlogTest[0]);
       } else {
@@ -38,20 +37,24 @@ const Blog = () => {
     }
   };
 
-
-
   const previews = blogs.map((blog, index) => (
     <BlogPreview blog={blog} key={index} />
   ));
 
   return (
-    <div style={{fontFamily: "Compass Sans"}} className="container mt-5">
+    <div style={{ fontFamily: "Compass Sans" }} className="container mt-5">
       <div className="row">
-        <div className="col-md-3">Welcome to the blog!</div>
+        <div className="col-md-3">
+          <h3>Welcome to my blog!</h3>
+          <p>
+            Here I'll be posting updates on both my househacking journey and
+            advice for entering the world of real estate investment.
+          </p>
+        </div>
         <div className="col-md-9">
           {isLoading ? (
             <div>
-              <LoadingSpinner/>
+              <LoadingSpinner />
             </div>
           ) : (
             <div className="row">
