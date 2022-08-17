@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Blog from "../pages/Blog";
 // import Tools from "../pages/Tools";
-import Testimonials from "../pages/Testimonials";
+import Reviews from "../pages/Reviews";
 import Admin from "../pages/Admin";
 import BlogItem from "./blogItem/BlogItem.js";
 import api from "../utils/api.js";
@@ -79,7 +79,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogItem />} />
         {/* <Route path="/tools" element={<Tools />} /> */}
-        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
         <Route
           path="/admin"

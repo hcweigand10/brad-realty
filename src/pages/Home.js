@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCoffee,
   faUserAstronaut,
-  faCalculator,
   faStar,
+  faPen
 } from "@fortawesome/free-solid-svg-icons";
 import bradFace from "../images/brad-headshot.jpeg";
 import { Link } from "react-router-dom";
@@ -108,13 +108,11 @@ const Home = () => {
       <div className="justify-content-center py-5">
         <div className="mb-1 pb-0 align-items-center container">
           <h2>
-            <FontAwesomeIcon icon={faCalculator} /> Tools
+            <FontAwesomeIcon icon={faPen} /> Tools
           </h2>
           <div className="my-4">
             <p>
-              Paragraph of text beneath the heading to explain the heading.
-              We'll add onto it with another sentence and probably just keep
-              going until we run out of words.
+              Periodically, I'll upload blog posts that go over the househacking experience and what you could expect. Click below to read!
             </p>
           </div>
           <Link
@@ -123,7 +121,7 @@ const Home = () => {
             id="service-1-call"
             style={{ width: "150px" }}
           >
-            Learn More
+            Blog
           </Link>
         </div>
       </div>
@@ -146,7 +144,7 @@ const Home = () => {
             id="service-1-call"
             style={{ width: "150px" }}
           >
-            Customer Testimonials
+            Reviews
           </Link>
         </div>
       </div>
