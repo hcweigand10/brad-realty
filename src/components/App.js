@@ -5,7 +5,7 @@ import Footer from "./footer/Footer.js";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Blog from "../pages/Blog";
-import Tools from "../pages/Tools";
+// import Tools from "../pages/Tools";
 import Testimonials from "../pages/Testimonials";
 import Admin from "../pages/Admin";
 import BlogItem from "./blogItem/BlogItem.js";
