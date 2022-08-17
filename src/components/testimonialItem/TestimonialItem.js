@@ -25,7 +25,7 @@ const TestimonialItem = ({ testimonialObj }) => {
 
   
   return (
-    <div class="card mx-auto col-11 col-md-7 col-lg-6 mb-4 shadow" >
+    <div class="card mx-auto col-11 col-md-7 col-lg-6 mb-4" >
       <div class="card-body p-3">
         <div className="row w-100 mb-3 mx-auto">
           <h3 className="col-8 my-auto p-0">{title}</h3>

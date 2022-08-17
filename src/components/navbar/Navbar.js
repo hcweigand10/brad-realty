@@ -20,7 +20,7 @@ const Navbar = () => {
     // <!-- Navbar -->
     <nav className="navbar navbar-expand-md navbar-dark bg-dark p-0 custom-nav">
       {/* <!-- Container wrapper --> */} 
-      <div className="container-fluid bg-dark" style={{fontFamily: "Compass Sans"}}>
+      <div className="container-fluid bg-dark" style={{fontFamily: "Compass Sans", zIndex: "3"}}>
         <button
           className="navbar-toggler"
           type="button"

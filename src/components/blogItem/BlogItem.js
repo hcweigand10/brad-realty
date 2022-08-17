@@ -28,7 +28,7 @@ const BlogItem = () => {
                 <div className='' style={{position: "relative", top: "50px", left: "0"}}>
                     <a className='go-back-link' href='/blog' style={{color: "black", textDecoration: "underline"}}><i class="fas fa-arrow-left me-1"></i>Go Back</a>
                 </div>
-                <div className='text-center col-md-8 col-lg-6 col-xl-5 mx-auto'>
+                <div className='text-center col-md-8 col-lg-6 col-xl-5 mx-auto mt-5'>
                     <img href="https://www.compass.com/ucfe-assets/mc-assets/2/email/Compass_Logo-Animated.gif" alt=""/>
                     <h1>{blog.title}</h1>
                     <p>{blog.subtitle}</p>

@@ -17,49 +17,6 @@ const Footer = () => {
                 {/* <!--Grid row--> */}
                 <div class="row">
                 {/* <!-- Grid column --> */}
-                {/* <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mb-2">
-                    <h4 class="text-uppercase text-center mb-2 font-weight-bold">
-                    Connect
-                    </h4>
-                    <div className="">
-                        <ul class="nav list-unstyled d-flex justify-content-center align-items-center">
-                            <li class="mx-2"> 
-                                <a
-                                    class="btn btn-floating m-2 btn-custom"
-                                    style={{backgroundColor: "#0072b1"}}
-                                    href="https://www.linkedin.com/in/henryweigand/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    role="button">
-                                    <FontAwesomeIcon icon={faLinkedin}/>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a
-                                    class="btn btn-floating m-2 btn-custom"
-                                    style={{backgroundColor: "black", color: "white"}}
-                                    href="https://github.com/hcweigand10/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    role="button">
-                                    <FontAwesomeIcon icon={faGithub}/>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a
-                                    class="btn btn-floating m-2 btn-custom"
-                                    style={{backgroundColor: "red", color: "white"}}
-                                    href="mailto:henryweigand10@gmail.com"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    role="button">
-                                    <FontAwesomeIcon icon={faEnvelope}/>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> */}
-                {/* <!-- Grid column --> */}
 
                 {/* <hr class="w-100 clearfix d-md-none" /> */}
 
@@ -70,8 +27,8 @@ const Footer = () => {
                     </h4>
                     <ul class="text-center list-unstyled align-items-center">
                         <li className="mb-1"><FontAwesomeIcon icon={faHome}/> Seattle, WA, US</li>
-                        <li className="mb-1"><FontAwesomeIcon icon={faEnvelope}/> henryweigand10@gmail.com</li>
-                        <li className="mb-1"><FontAwesomeIcon icon={faPhone}/> +1 206-349-9260</li>
+                        <li className="mb-1"><FontAwesomeIcon icon={faEnvelope}/> bradley.dosch@compass.com</li>
+                        <li className="mb-1"><FontAwesomeIcon icon={faPhone}/> +1 (714) 767-8699</li>
                     </ul>
                 </div>
                 {/* <!-- Grid column --> */}

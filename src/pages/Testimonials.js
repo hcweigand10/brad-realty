@@ -25,7 +25,7 @@ const Testimonials = () => {
   });
 
   return (
-    <div className="container mt-3" >
+    <div className="container mt-3 bg-light" >
       <h4 style={{fontFamily: "Compass Sans"}}>Zillow Ratings & Reviews ({testimonials.length})</h4>
       <h6 className="text-muted" style={{fontFamily: "Compass Sans"}}>Sorting by most recent</h6>
       <div className="my-2" style={{fontFamily: "Compass Sans"}}>
@@ -36,7 +36,7 @@ const Testimonials = () => {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <div className="">
+          <div className="py-4 bg-white shadow-sm mx-auto" style={{height: "80vh", overflowY: "scroll"}}>
             {testimonialItems}
           </div>
         )}
