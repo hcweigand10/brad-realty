@@ -36,7 +36,7 @@ const Testimonials = () => {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <div className="py-4 bg-white shadow-sm mx-auto" style={{height: "80vh", overflowY: "scroll"}}>
+          <div className="py-4 bg-white shadow-sm mx-auto" style={{height: "80vh", overflowY: "scroll", zIndex: "-1"}}>
             {testimonialItems}
           </div>
         )}
