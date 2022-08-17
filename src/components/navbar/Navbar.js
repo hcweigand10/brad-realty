@@ -47,9 +47,9 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className={(activePage==="blog") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/blog" onClick={() => handlePageChange()}>Blog</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className={(activePage==="tools") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/tools" onClick={() => handlePageChange()}>Tools</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className={(activePage==="testimonials") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/testimonials" onClick={() => handlePageChange()}>Testimonials</Link>
             </li>
