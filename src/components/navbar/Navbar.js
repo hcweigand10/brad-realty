@@ -9,7 +9,9 @@ const Navbar = () => {
   const [collapse, setCollapse] = useState(false)
 
   const handlePageChange = () => {
-    setActivePage(window.location.pathname.split("/")[1])
+    setTimeout(() => {
+      setActivePage(window.location.pathname.split("/")[1])
+    }, 300);
   }
 
   const handleCollapse = () => {
@@ -42,7 +44,7 @@ const Navbar = () => {
           {/* <!-- Left links --> */}
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link className={(activePage==="home") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/" onClick={() => handlePageChange()}>Home</Link>
+              <Link className={(activePage==="") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/" onClick={() => handlePageChange()}>Home</Link>
             </li>
             <li className="nav-item">
               <Link className={(activePage==="blog") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/blog" onClick={() => handlePageChange()}>Blog</Link>

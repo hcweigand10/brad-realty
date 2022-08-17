@@ -108,7 +108,7 @@ const Home = () => {
       <div className="justify-content-center py-5">
         <div className="mb-1 pb-0 align-items-center container">
           <h2>
-            <FontAwesomeIcon icon={faPen} /> Tools
+            <FontAwesomeIcon icon={faPen} /> Blog
           </h2>
           <div className="my-4">
             <p>
@@ -131,7 +131,7 @@ const Home = () => {
       >
         <div className="mb-1 pb-0 align-items-center container">
           <h2>
-            <FontAwesomeIcon icon={faStar} /> Testimonials
+            <FontAwesomeIcon icon={faStar} /> Reviews
           </h2>
           <div className="my-4">
             <p>
