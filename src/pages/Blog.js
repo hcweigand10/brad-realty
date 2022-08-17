@@ -45,10 +45,10 @@ const Blog = () => {
     <div style={{ fontFamily: "Compass Sans" }} className="container mt-5">
       <div className="row">
         <div className="col-md-3">
-          <h3>Welcome to my blog!</h3>
+          <h2>Welcome to my blog!</h2>
           <p>
             Here I'll be posting updates on both my househacking journey and
-            advice for entering the world of real estate investment.
+            advice for entering the world of real estate investment
           </p>
         </div>
         <div className="col-md-9">
@@ -58,9 +58,9 @@ const Blog = () => {
             </div>
           ) : (
             <div className="row">
-              <h3>Featured</h3>
+              <h4>Featured</h4>
               <BlogPreview blog={featureBlog} />
-              <h3>More Posts</h3>
+              <h4>More Posts</h4>
               {previews}
             </div>
           )}
