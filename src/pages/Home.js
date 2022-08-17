@@ -6,13 +6,13 @@ import {
   faStar,
   faPen
 } from "@fortawesome/free-solid-svg-icons";
-import bradFace from "../images/brad-headshot.jpeg";
+import bradFace from "../images/brad-headshot2.jpeg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="home-co" style={{ backgroundColor: "white", fontFamily: "Compass Sans" }}>
-      <div class="px-4 py-5 text-light" id="home-background" >
+      <div class="px-4 py-5 text-light" id="home-background">
         <div class="row flex-lg-row align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
             <img
@@ -116,7 +116,7 @@ const Home = () => {
             </p>
           </div>
           <Link
-            to="/"
+            to="/blog"
             class="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}
@@ -139,7 +139,7 @@ const Home = () => {
             </p>
           </div>
           <Link
-            to="/testimonials"
+            to="/reviews"
             class="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}

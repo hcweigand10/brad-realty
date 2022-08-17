@@ -27,7 +27,7 @@ code {
 
 /* HOME PAGE */
 #override #home-background {
-  background-image: url("https://3dlab.bg/wp-content/uploads/2020/11/mountains-and-pine-forest-01.jpg");
+  background-image: url("https://iili.io/gxiSXs.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ code {
 }
 
 #override .home-title {
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 2px black;
 }
 
 #override .btn-custom-effect1 {

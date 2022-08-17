@@ -37,7 +37,7 @@ const Navbar = () => {
         </button>
           {/* <!-- Navbar brand --> */}
           <Link className="navbar-brand mt-md-0 p-2" to="/" onClick={() => handlePageChange("/home")}>
-            Dosch Realty
+            Bradley Dosch
           </Link>
         {/* <!-- Collapsible wrapper --> */}
         <div className={(collapse) ? "navbar-collapse" : "collapse navbar-collapse"} id="navbarSupportedContent">
@@ -56,7 +56,7 @@ const Navbar = () => {
               <Link className={(activePage==="reviews") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/reviews" onClick={() => handlePageChange()}>Reviews</Link>
             </li>
             <li className="nav-item">
-              <Link className={(activePage==="contact") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/contact" onClick={() => handlePageChange("/contact")}>Contact</Link>
+              <Link className={(activePage==="contact") ? "nav-link custom-link-active" : "nav-link custom-link"} to="/contact" onClick={() => handlePageChange()}>Contact</Link>
             </li>
           </ul>
           {/* <!-- Left links --> */}

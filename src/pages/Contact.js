@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Contact = () => {
   return (
     <div
@@ -52,8 +53,9 @@ const Contact = () => {
             </div>
             <div className="col-md-6 p-0" style={{ }}>
               <img
-                src="https://c1.wallpaperflare.com/preview/67/385/187/greem-leaf-plant-minimal.jpg"
-                style={{objectFit: "cover", width: "100%", maxHeight: "35vw", minHeight: "100%"}}
+                src="https://iili.io/gxiQp9.jpg"
+                // src="https://c1.wallpaperflare.com/preview/67/385/187/greem-leaf-plant-minimal.jpg"
+                style={{objectFit: "cover", width: "100%", maxHeight: "50vw", minHeight: "100%"}}
                 alt="pretty leaves"
               />
             </div>
