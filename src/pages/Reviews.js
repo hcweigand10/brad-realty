@@ -33,6 +33,8 @@ const Testimonials = () => {
             <a
               href="https://www.zillow.com/reviews/write/?s=X1-ZU15wna48c227m1_6msnz"
               className=""
+              target="_blank"
+              rel="norefferer"
             >
               Worked with me lately? Tell me how it went!
             </a>
