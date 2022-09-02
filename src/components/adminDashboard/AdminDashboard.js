@@ -135,27 +135,27 @@ const AdminDashboard = () => {
 
   return (
     <div className="" id="admin-dashboard">
-      <ul class="nav nav-tabs mb-3" id="ex-with-icons" role="tablist">
-        <li class="nav-item" role="presentation">
+      <ul className="nav nav-tabs mb-3" id="ex-with-icons" role="tablist">
+        <li className="nav-item" role="presentation">
           <button
-            class={viewAll ? "nav-link active p-2" : "nav-link p-2"}
+            className={viewAll ? "nav-link active p-2" : "nav-link p-2"}
             id="dashboard-tab-link-1"
             onClick={() => {
               setView(true);
             }}
           >
-            <i class="fas fa-chart-pie fa-fw me-2"></i>All Posts
+            <i className="fas fa-chart-pie fa-fw me-2"></i>All Posts
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class={!viewAll ? "nav-link active p-2" : "nav-link p-2"}
+            className={!viewAll ? "nav-link active p-2" : "nav-link p-2"}
             id="dashboard-tab-link-2"
             onClick={() => {
               setView(false);
             }}
           >
-            <i class="fas fa-chart-line fa-fw me-2"></i>Create New Post
+            <i className="fas fa-chart-line fa-fw me-2"></i>Create New Post
           </button>
         </li>
       </ul>

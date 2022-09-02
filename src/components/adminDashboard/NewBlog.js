@@ -43,17 +43,17 @@ const NewBlog = ({postNewBlog}) => {
     return (
         <form className='my-4' id='new-blog-form' onSubmit={handleBlogSubmit}>
             <h4>Blog Info</h4>
-  <div class="form-group">
+  <div className="form-group">
     <label htmlFor="FormControlInputTitle">Blog Title</label>
-    <input type="text" class="form-control" id="FormControlInputTitle"/>
+    <input type="text" className="form-control" id="FormControlInputTitle"/>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label htmlFor="FormControlInputSubtitle">Subtitle</label>
-    <input type="text" class="form-control" id="FormControlInputSubtitle"/>
+    <input type="text" className="form-control" id="FormControlInputSubtitle"/>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label htmlFor="FormControlInputThumbnail">Thumbnail URL</label>
-    <input type="text" class="form-control" id="FormControlInputThumbnail"/>
+    <input type="text" className="form-control" id="FormControlInputThumbnail"/>
   </div>
 
   
@@ -71,15 +71,15 @@ const ParagraphForm = ({index}) => {
     <h4>Paragraph #{index}</h4>
     <div className='form-group'>
         <label htmlFor={`paragraph-title-${index}`}>Paragraph Title</label>
-        <input type="text" class="form-control" id={`paragraph-title-${index}`}/>
+        <input type="text" className="form-control" id={`paragraph-title-${index}`}/>
     </div>
     <div className='form-group'>
         <label htmlFor={`paragraph-thumbnail-${index}`}>Paragraph Thumbnail URL</label>
-        <input type="text" class="form-control" id={`paragraph-thumbnail-${index}`}/>
+        <input type="text" className="form-control" id={`paragraph-thumbnail-${index}`}/>
     </div>
     <div className='form-group'>
         <label htmlFor={`paragraph-content-${index}`}>Paragraph Content</label>
-        <textarea class="form-control" id={`paragraph-content-${index}`} rows="3"></textarea>
+        <textarea className="form-control" id={`paragraph-content-${index}`} rows="3"></textarea>
     </div>
   </div>
     )

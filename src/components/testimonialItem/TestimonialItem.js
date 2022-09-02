@@ -25,8 +25,8 @@ const TestimonialItem = ({ testimonialObj }) => {
 
   
   return (
-    <div class="card mx-auto col-11 col-md-10 col-lg-8 mb-4" >
-      <div class="card-body p-3">
+    <div className="card mx-auto col-11 col-md-10 col-lg-8 mb-4" >
+      <div className="card-body p-3">
         <div className="row w-100 mb-3 mx-auto">
           <h3 className="col-8 my-auto p-0">{title}</h3>
           <h5 className="col-4 my-auto p-0" style={{textAlign: "end"}}>5.0 <FontAwesomeIcon icon={faStar} style={{color: "blue"}}/></h5>
@@ -49,11 +49,11 @@ const TestimonialItem = ({ testimonialObj }) => {
           </p>
           <button className="btn btn-primary" onClick={() => setShowMore(!showMore)}><FontAwesomeIcon icon={faPlus} className="me-1"/>Show more</button>
         </div>
-        {/* <h4 class="card-title">
+        {/* <h4 className="card-title">
           <img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png" alt="quote"/>
         </h4>
 
-        <div class="template-demo">
+        <div className="template-demo">
           <p>
             {testimonialObj.reviewBodyMain.concat(testimonialObj.reviewBodyExtra)}
           </p>
@@ -61,17 +61,17 @@ const TestimonialItem = ({ testimonialObj }) => {
 
         <hr />
 
-        <div class="row">
-          <div class="col-sm-2 my-auto">
+        <div className="row">
+          <div className="col-sm-2 my-auto">
             <h1 className="text-center">
               <FontAwesomeIcon icon={userIcons[Math.floor(Math.random()*userIcons.length)]} style={{color: colors[Math.floor(Math.random() * 5)]}}/>
             </h1>
           </div>
 
-          <div class="col-sm-10 my-auto">
-            <div class="profile my-auto">
-              <h4 class="cust-name">{testimonialObj.reviewerDisplayName}</h4>
-              <p class="cust-profession">{date}</p>
+          <div className="col-sm-10 my-auto">
+            <div className="profile my-auto">
+              <h4 className="cust-name">{testimonialObj.reviewerDisplayName}</h4>
+              <p className="cust-profession">{date}</p>
             </div>
           </div>
         </div> */}

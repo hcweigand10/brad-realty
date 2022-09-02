@@ -12,12 +12,12 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="home-co" style={{ backgroundColor: "white", fontFamily: "Compass Sans" }}>
-      <div class="px-4 py-5 text-light" id="home-background">
-        <div class="row flex-lg-row align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
+      <div className="px-4 py-5 text-light" id="home-background">
+        <div className="row flex-lg-row align-items-center g-5 py-5">
+          <div className="col-10 col-sm-8 col-lg-6">
             <img
               src={bradFace}
-              class="d-block mx-lg-auto img-fluid"
+              className="d-block mx-lg-auto img-fluid"
               id="brad-headshot"
               alt="Bootstrap Themes"
               width="400"
@@ -25,17 +25,17 @@ const Home = () => {
               loading="lazy"
             />
           </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3 home-title">Brad Dosch</h1>
-            <h4 class="lead home-title">House Hacking Real Estate Agent</h4>
-            <h6 class="lead home-title">House Hack Seattle | Compass </h6>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start"></div>
+          <div className="col-lg-6">
+            <h1 className="display-5 fw-bold lh-1 mb-3 home-title">Brad Dosch</h1>
+            <h4 className="lead home-title">House Hacking Real Estate Agent</h4>
+            <h6 className="lead home-title">House Hack Seattle | Compass </h6>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start"></div>
           </div>
         </div>
       </div>
-      {/* <div class="container px-4 py-5" id="featured-3">
-                <div class="row g-5 py-5 row-cols-1 row-cols-lg-3">
-                    <div class="col">
+      {/* <div className="container px-4 py-5" id="featured-3">
+                <div className="row g-5 py-5 row-cols-1 row-cols-lg-3">
+                    <div className="col">
                         <div className="card card-hover rounded-5 shadow-lg p-3">
                             <div className="mb-1 pb-0 align-items-center">
                                 <div className="">
@@ -43,12 +43,12 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            <a href="/" className="btn btn-white btn-custom-effect1" id="service-1-call" >
                             Learn More  
                             </a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <div className="card card-hover rounded-5 shadow-lg p-3">
                             <div className="mb-1 pb-0 align-items-center">
                                 <div className="">
@@ -56,12 +56,12 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            <a href="/" className="btn btn-white btn-custom-effect1" id="service-1-call" >
                             Learn More  
                             </a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <div className="card card-hover rounded-5 shadow-lg p-3">
                             <div className="mb-1 pb-0 align-items-center">
                                 <div className="">
@@ -69,7 +69,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="/" class="btn btn-white btn-custom-effect1" id="service-1-call" >
+                            <a href="/" className="btn btn-white btn-custom-effect1" id="service-1-call" >
                             Learn More  
                             </a>
                         </div>
@@ -117,7 +117,7 @@ const Home = () => {
           </div>
           <Link
             to="/blog"
-            class="btn btn-white btn-custom-effect1"
+            className="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}
           >
@@ -140,7 +140,7 @@ const Home = () => {
           </div>
           <Link
             to="/reviews"
-            class="btn btn-white btn-custom-effect1"
+            className="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}
           >
@@ -163,7 +163,7 @@ const Home = () => {
             href="https://calendly.com/bradley-dosch/chat-with-bradley"
             target="_blank"
             rel="noreferrer"
-            class="btn btn-white btn-custom-effect1"
+            className="btn btn-white btn-custom-effect1"
             id="service-1-call"
             style={{ width: "150px" }}
           >
