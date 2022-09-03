@@ -173,7 +173,7 @@ const AdminDashboard = () => {
                     className="btn btn-primary"
                     onClick={updateZillowReviews}
                   >
-                    Update Reviews
+                    Fetch New Zillow Reviews
                   </button>
                   <p className="text-muted">
                     Last updated from this device: {lastUpdatedDate}

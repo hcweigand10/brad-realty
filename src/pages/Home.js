@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import bradFace from "../images/brad-headshot2.jpeg";
 import { Link } from "react-router-dom";
-import api from "../utils/api";
 
 const Home = () => {
 

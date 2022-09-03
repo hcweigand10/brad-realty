@@ -100,13 +100,15 @@ code {
 }
 
 /* Testimonials Page */
-.blue-star {
+#override .blue-star {
   color: blue
 }
 
-.white-star {
+#override .white-star {
   color: lightgrey;
 }
+
+
 
 
 
