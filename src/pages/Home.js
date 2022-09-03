@@ -12,15 +12,6 @@ import api from "../utils/api";
 
 const Home = () => {
 
-  useEffect(() => {
-    checkUsers()
-  }, [])
-  
-  const checkUsers = async () => {
-      const users = await api.getUsers()
-      console.log(users.length)
-  }
-
   return (
     <div className="home-co" style={{ backgroundColor: "white", fontFamily: "Compass Sans" }}>
       <div className="px-4 py-5 text-light" id="home-background">
