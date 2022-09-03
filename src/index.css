@@ -27,7 +27,7 @@ code {
 
 /* HOME PAGE */
 #override #home-background {
-  background-image: url("https://iili.io/gxiSXs.jpg");
+  background-image: url("./images/landscape.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

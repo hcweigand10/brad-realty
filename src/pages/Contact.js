@@ -1,4 +1,5 @@
 import React from "react";
+import brad from "../images/brad-cool.png"
 
 
 const Contact = () => {
@@ -53,8 +54,7 @@ const Contact = () => {
             </div>
             <div className="col-md-6 p-0" style={{ }}>
               <img
-                src="https://iili.io/gxiQp9.jpg"
-                // src="https://c1.wallpaperflare.com/preview/67/385/187/greem-leaf-plant-minimal.jpg"
+                src={brad}
                 style={{objectFit: "cover", width: "100%", maxHeight: "50vw", minHeight: "100%"}}
                 alt="pretty leaves"
               />
