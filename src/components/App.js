@@ -38,8 +38,15 @@ const App = () => {
           console.log("bad token");
           console.log(err);
         });
+    } else {
+      checkBlogs()
     }
   }, []);
+
+  const checkBlogs = async () => {
+    const blogs = await api.getBlogs()
+    console.log(blogs.length)
+}
 
   const logMeIn = async (e) => {
     console.log(token)
