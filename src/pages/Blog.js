@@ -60,7 +60,7 @@ const Blog = () => {
             <div className="row">
               <h4>Featured</h4>
               <BlogPreview blog={featureBlog} />
-              <h4>More Posts</h4>
+              {previews.length>0 &&<h4>More Posts</h4>}
               {previews}
             </div>
           )}

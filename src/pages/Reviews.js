@@ -60,7 +60,6 @@ const Testimonials = () => {
                             </h4>
                             <div className="py-3 shadow-sm" id="review-overflow" style={{ overflowY: "scroll", height: "75vh", backgroundColor: "white", borderRadius: "8px"}}>
                                 {testimonialItems}
-                                {testimonialItems}
                             </div>
                         </div>
                     )}
