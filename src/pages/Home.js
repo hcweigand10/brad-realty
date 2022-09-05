@@ -16,7 +16,7 @@ const Home = () => {
     <div className="home-co" style={{ backgroundColor: "white", fontFamily: "Compass Sans" }}>
       <div className="px-4 py-5 text-light" id="home-background" style={{backgroundImage: `url(${landscape})`}}>
         <div className="row flex-lg-row align-items-center g-5 py-5">
-          <div className="col-10 col-sm-8 col-lg-6">
+          <div className="col-10 col-sm-8 col-lg-6 mt-1">
             <img
               src={bradFace}
               className="d-block mx-lg-auto img-fluid"
