@@ -28,7 +28,7 @@ const Home = () => {
             />
           </div>
           <div className="col-lg-6">
-            <h1 className="display-5 fw-bold lh-1 mb-3 home-title">Brad Dosch</h1>
+            <h1 className="display-5 fw-bold lh-1 mb-3 home-title">Bradley Dosch</h1>
             <h4 className="lead home-title">House Hacking Real Estate Agent</h4>
             <h6 className="lead home-title">House Hack Seattle | Compass </h6>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start"></div>
