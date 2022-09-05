@@ -7,7 +7,7 @@ import {
   faPen
 } from "@fortawesome/free-solid-svg-icons";
 import bradFace from "../images/brad-headshot2.jpeg";
-import landscape from "../images/landscape.jpeg"
+import landscape from "../images/landscape.jpg"
 import { Link } from "react-router-dom";
 
 const Home = () => {
