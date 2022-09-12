@@ -21,7 +21,7 @@ const BlogPreview = ({ blog }) => {
                     </div>
                 </div>
             ) : (
-                <div className='card blog-card non-feature-preview'>
+                <div className='card blog-card non-feature-preview' style={{height: "100%"}}>
                     <img src={blog.thumbnail} alt="blog thumbnail" style={{width: "100%", height: "200px", objectFit: "cover"}}/>
                     <div className='p-3'>
                         <h6 className='text-muted'>{blog.date}</h6>

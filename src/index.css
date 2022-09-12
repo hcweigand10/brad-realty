@@ -99,10 +99,6 @@ code {
   box-shadow: 0px 0px 5px darkgray;
 }
 
-#override .non-feature-preview {
-  /* height: 100% */
-}
-
 /* Testimonials Page */
 #override .blue-star {
   color: blue
