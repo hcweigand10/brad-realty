@@ -44,14 +44,14 @@ const Blog = () => {
   return (
     <div style={{ fontFamily: "Compass Sans" }} className="container mt-5">
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-md-3 pb-3">
           <h2>Welcome to my blog!</h2>
           <p>
             Here I'll be posting updates on both my househacking journey and
             advice for entering the world of real estate investment
           </p>
         </div>
-        <div className="col-md-9">
+        <div className="col-md-9 mx-auto">
           {isLoading ? (
             <div>
               <LoadingSpinner />
