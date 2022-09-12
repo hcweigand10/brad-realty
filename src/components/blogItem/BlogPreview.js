@@ -3,7 +3,7 @@ import React from 'react'
 const BlogPreview = ({ blog }) => {
 
     return (
-        <a className={blog.isFeatured ? "col-12 my-3" : "col-md-4 my-3"} style={{textDecoration: "none", fontFamily: "Compass Sans"}} href={`/blog/${blog.id}}`}>
+        <a className={blog.isFeatured ? "col-12 my-3" : "col-md-6 col-lg-4 my-3"} style={{textDecoration: "none", fontFamily: "Compass Sans"}} href={`/blog/${blog.id}}`}>
             {blog.isFeatured ? (
                 <div className='card blog-card'>
                     <div className='row'>
