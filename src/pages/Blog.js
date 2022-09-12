@@ -42,7 +42,7 @@ const Blog = () => {
   ));
 
   return (
-    <div style={{ fontFamily: "Compass Sans" }} className="container mt-5">
+    <div style={{ fontFamily: "Compass Sans" }} className="container mt-5 pb-4">
       <div className="row">
         <div className="col-md-3 pb-3">
           <h2>Welcome to my blog!</h2>
