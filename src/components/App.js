@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./navbar/Navbar.js";
 import Footer from "./footer/Footer.js";
 import Home from "../pages/Home";
@@ -8,6 +9,7 @@ import Blog from "../pages/Blog";
 // import Tools from "../pages/Tools";
 import Reviews from "../pages/Reviews";
 import Admin from "../pages/Admin";
+import NotFound from "../pages/NotFound.js";
 import BlogItem from "./blogItem/BlogItem.js";
 import api from "../utils/api.js";
 
@@ -92,13 +94,14 @@ const App = () => {
           path="/admin"
           element={
             <Admin
-              loginInfo={loginInfo}
-              handleInputChange={handleInputChange}
-              logMeIn={logMeIn}
-              loggedIn={loggedIn}
+            loginInfo={loginInfo}
+            handleInputChange={handleInputChange}
+            logMeIn={logMeIn}
+            loggedIn={loggedIn}
             />
           }
         />
+          <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
