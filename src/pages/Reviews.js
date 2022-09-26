@@ -14,7 +14,7 @@ const Testimonials = () => {
 
     const getTestimonials = async () => {
         const testimonialsData = await api.getTestimonials();
-        setTestimonials(testimonialsData);
+        setTestimonials(testimonialsData.sort((a,b) => b.zillow_id - a.zillow_id));
         setIsLoading(false);
     };
 
