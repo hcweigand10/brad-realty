@@ -1,6 +1,6 @@
 // const baseUrl = "http://localhost:3001"
 
-const baseUrl = "https://brad-dosch-backend.herokuapp.com"
+const baseUrl = "https://gleaming-cyan-gloves.cyclic.app"
 
 const options = {
     method: 'GET',
